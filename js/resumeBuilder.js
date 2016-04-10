@@ -1,6 +1,5 @@
-/* Make skills-at-a-glance into variables so that they can be used as filter buttons
-/* to more easily view the various jobs and projects
-*/
+/* Set up skills-at-a-glance as a set of variables so that they can be used as filter buttons
+/* to easily select and view related jobs and projects */
 
 var video = "video and media production";
 var lead = "leadership";
