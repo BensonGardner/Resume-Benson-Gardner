@@ -62,30 +62,33 @@
 
     var x = 0;
 
-    while (bio.skills.length > x) {
-      var formattedSkills = HTMLskills.replace('%data%', bio.skills[x]);
-      $('#skills').append(formattedSkills);
-      x++
-    };
+    bio.display = function(){
+      while (bio.skills.length > x) {
+        var formattedSkills = HTMLskills.replace('%data%', bio.skills[x]);
+        $('#skills').append(formattedSkills);
+        x++
+      };
+    }
 
-    function displayWork(){
-      for (var key in work) {
-        if (work.hasOwnProperty(key)) {
+    bio.display();
+
+    work.display = function(){
+      for (var key in work.jobs) {
+      if (work.jobs.hasOwnProperty(key)) {
           $('#workExperience').append(HTMLworkStart);
           /* Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property. */
-          if (Boolean(work[key].employer) == true) {
-            console.log(work[key].employer);
-            $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work[key].employer))
-              + (HTMLworkTitle.replace('%data%' , work[key].position)));
+          if (Boolean(work.jobs[key].employer) == true) {
+            $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer))
+              + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
           } else {
-             $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work[key].position));
+             $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work.jobs[key].position));
           };
-          $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work[key].city) + HTMLworkYears.replace('%data%' , work[key].years) + HTMLworkDescription.replace('%data%' , work[key].description));
+          $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years) + HTMLworkDescription.replace('%data%' , work.jobs[key].description));
             };
         }
     }
 
-    displayWork();
+    work.display();
 
     projects.display = function() {
      for (projectIndex = 0; projectIndex < projects.projectEntries.length; projectIndex++) {
@@ -101,6 +104,38 @@
     }
 
     projects.display();
+
+  education.display = function (){
+    for (schoolsIndex = 0; schoolsIndex < education.schools.length; schoolsIndex++) {
+      $('#education').append(HTMLschoolStart);
+      var formattedSchoolName = HTMLschoolName.replace('%data%' , education.schools[schoolsIndex].name);
+      if (education.schools[schoolsIndex].degree != undefined) {
+        var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
+      } else {
+        var formattedSchoolDegree = "</a>";
+      };
+      var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
+      var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
+       if (education.schools[schoolsIndex].major != undefined) {
+        var formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].major);
+      } else {
+        var formattedSchoolMajor = "";
+      };
+      var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
+      $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolNotable);
+    };
+    $('#education').append(HTMLonlineClasses);
+    for (onlinecourseIndex = 0; onlinecourseIndex < education.onlineCourses.length; onlinecourseIndex++) {
+        $('#education').append(HTMLschoolStart);
+        var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , education.onlineCourses[onlinecourseIndex].title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , education.onlineCourses[onlinecourseIndex].school);
+        var formattedOnlineDates = HTMLonlineDates.replace('%data%' , education.onlineCourses[onlinecourseIndex].dates);
+        var formattedOnlineURL = HTMLonlineURL.replace('%data%' , education.onlineCourses[onlinecourseIndex].URL);
+        $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL);
+    };
+  }
+
+  education.display();
 
     $('#main').append(internationalizeButton);
 

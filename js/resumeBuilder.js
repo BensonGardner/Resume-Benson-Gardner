@@ -30,6 +30,7 @@ var bio = {
 };
 
 var work = {
+    "jobs" : {
         "dpi" : {
             "position" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
@@ -71,31 +72,32 @@ var work = {
             "years" : "1996 - 2002, 2008 - 2012",
             "description" : "Improvisation means giving up control while looking like you aren't."
         }
+    }
 };
 
 var education = {
     "schools": [
         {
             "name" : "University of Chicago",
-            "city" : "Chicago, Illinois, USA",
+            "location" : "Chicago, Illinois, USA",
+            "degree" : "B.A.",
             "major" : "Anthropology",
-            "degree" : "B.A. cum laude",
-            "years" : [1991, 1995],
-            "notable" : ["National Merit Scholar"]
+            "dates" : "1991 - 1995",
+            "notable" : ["Cum laude. National Merit Scholar."]
         },
         {
             "name" : "Menomonie High School",
-            "city" : "Menomonie, Wisconsin, USA",
-            "years" : [1987, 1991],
-            "notable" : ["Top 3 percent of class", "All-State Scholar", "Music", "Theater", "National Honors Society"]
+            "location" : "Menomonie, Wisconsin, USA",
+            "dates" : "1987- 1991",
+            "notable" : ["Top 3 percent of class. All-State Scholar. National Honors Society."]
         }
     ],
     "onlineCourses": [
         {
             "title" : "Front-End Developer Nanodegree",
             "school" : "Udacity.com",
-            "date" : "2016",
-            "URL" : ""
+            "dates" : "2016",
+            "URL" : "http://udacity.com"
         }
     ],
     "otherTraining": [
@@ -105,9 +107,7 @@ var education = {
         {
             "name" : "Grant-writing"
         }
-    ],
-    display : function(){
-    }
+    ]
 };
 
 var projects = {
