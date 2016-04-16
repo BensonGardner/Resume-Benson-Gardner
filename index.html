@@ -77,24 +77,32 @@
         if (work.jobs.hasOwnProperty(key)) {
           $('#workExperience').append(HTMLworkStart);
           /* Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property. */
-          if (Boolean(work.jobs[key].employer) == true) {
+          matchJobs = function(duty) {
+            if(duty === work.jobs[key]) {
+            return true;
+          }
+        };
+        if (Boolean(work.jobs[key].employer) === true) {
             $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer))
               + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
           } else {
              $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work.jobs[key].position));
-          };
+          }
           $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
           //add all related job duties to the work-entry -- instead of a description.
-          for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
-            if (duties[dutiesIndex].relatedJobs.some = work.jobs[key]) {
-              var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
-              formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
-              $('.work-entry:last').append(formattedDuty);
-            };
-          };
-        };
-      };
-    }
+            for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
+              console.log(duties[dutiesIndex].relatedJobs);
+              console.log(work.jobs[key]);
+              console.log(matchJobs(duties[dutiesIndex]));
+              if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
+                var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
+                formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
+                $('.work-entry:last').append(formattedDuty);
+            }
+          }
+        }
+      }
+    };
 
     work.display();
 
