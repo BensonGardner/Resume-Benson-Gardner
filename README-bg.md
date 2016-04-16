@@ -1,10 +1,7 @@
 
 NEXGT STEPS
-have to encapsulate all the stuff in the bio sectino. WAITING TO DO THIS UNTIL THE SKILLS ARE FIGURED OUT. DOES THAT MAKE SENSE?
-
-it seems as though the key to the object isn't really something that equals the objectso i'm not sure how to point to it - not sure how to say work.jobs.dpi and have it actually equal the object called "dpi" that is within work.jobs.
-
-how to make the skills into the filters. Ironically the skills vars I set up are basically gone by the time the HTML is created. But I think if I include somewhere a js function that I then operate on with other js, i.e. "onClick = filter(%data%)" or whatever that correctg syntax is here exists in one file -- would that be right in the index or helper?? woudl it be aprt of the style?? where do you attach the "onClick" designation to an elemlent? And  anyway then in the main js file - which is currently in index but I would like to pull into a separate file I would think unless that's too ambitious -- I would define that filter functinon, .e. "var filter = function(skill) {//code to change class of all work entries and project entries if they have a duty that has that skill in relateddSkills}
+how to make the skills into the filters.
+    it looks like i will be using a data-presentation attribute and then that css thing where you can use any attribute and its value. data-presentation="emphasized" data-presentation="deemphasized" data-presentation="neutral" (Ironically the skills vars I set up are basically gone by the time the HTML is created.??) But I think if I include somewhere a js function that I then operate on with other js, i.e. "onClick = filter(%data%)" or whatever that correctg syntax is here exists in one file -- would that be right in the index or helper?? woudl it be aprt of the style?? where do you attach the "onClick" designation to an elemlent? And  anyway then in the main js file - which is currently in index but I would like to pull into a separate file I would think unless that's too ambitious -- I would define that filter functinon, .e. "var filter = function(skill) {//code to change class of all work entries and project entries if they have a duty that has that skill in relateddSkills}
 
 then you can start setting up the interactivity -- make sure you can get the skills to select the jobs and projects - use some
 simple styling to make it obvious.

@@ -38,6 +38,12 @@ var work = {
             "years" : "2007 -",
             "description" : "I edit and manage certain communications from the state superintendent of public instruction. I am the front-end developer in the Office of the State Superintendent. I also coordinate multimedia production at the agency. That includes leading teams of producers in creating high quality video pieces in a variety of styles. I create guidelines for agency staff and consult and train to ensure our most important videos are high quailty. I also led the effort to create a pocliy to guide the organization's social media use, back when that was a really new thing."
         },
+        "webdev" : {
+            "position" : "Front-end Web Developer",
+            "employer" : "",
+            "city" : "Madison, Wisconsin, USA",
+            "years" : "2016 -"
+        },
         "indie" : {
             "position" : "Independent Media Producer",
             "city" : "Madison, Wisconsin, USA",
@@ -158,14 +164,19 @@ var projects = {
 
 var duties = [
     {
-        "name" : "Manage organization's video program",
-        "relatedSkills" : [lead, video],
-        "relatedJobs" : [work.jobs.dpi]
-    },
-    {
         "name" : "Recruit, hire, oversee staff",
         "relatedSkills" : [lead],
         "relatedJobs" : [work.jobs.dpi, work.jobs.uwp]
+    },
+    {
+        "name" : "Lead production teams",
+        "relatedSkills" : [lead, video, collab, create],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+    },
+    {
+        "name" : "Manage organization's video program",
+        "relatedSkills" : [lead, video],
+        "relatedJobs" : [work.jobs.dpi]
     },
     {
         "name" : "Manage state superintendent’s electronic newsletter, DPI-ConnectEd",
@@ -175,7 +186,7 @@ var duties = [
     {
         "name" : "Write news releases, articles, and other materials",
         "relatedSkills" : [write, collab],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.uwp, work.jobs.indie]
+        "relatedJobs" : [work.jobs.dpi, work.jobs.uwp]
     },
     {
         "name" : "Create video pieces",
@@ -188,14 +199,14 @@ var duties = [
         "relatedJobs" : [work.jobs.dpi, work.jobs.wpt, work.jobs.indie]
     },
     {
-        "name" : "Produce radio news segments for statewide broadcast",
+        "name" : "Produce award-winning radio news segments for statewide broadcast",
         "relatedSkills" : [video, perform, write],
         "relatedJobs" : [work.jobs.wpr]
     },
     {
         "name" : "Comic acting",
         "relatedSkills" : [perform],
-        "relatedJobs" : [work.jobs.indie, work.jobs.improv]
+        "relatedJobs" : [work.jobs.improv]
     },
     {
         "name" : "Craft and oversee wording and visual presentation of agency messages for videos",
@@ -208,11 +219,6 @@ var duties = [
         "relatedJobs" : [work.jobs.dpi]
     },
     {
-        "name" : "Lead production teams",
-        "relatedSkills" : [lead, video, collab, create],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
-    },
-    {
         "name" : "Plan, execute communications campaigns",
         "relatedSkills" : [lead, collab, create, video, web, write, comms],
         "relatedJobs" : [work.jobs.dpi]
@@ -220,7 +226,7 @@ var duties = [
     {
         "name" : "Assemble, facilitate workgroups and committees",
         "relatedSkills" : [lead, collab],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+        "relatedJobs" : [work.jobs.dpi]
     },
     {
         "name" : "Serve as lead author for agency policy on social media",
@@ -373,9 +379,19 @@ var duties = [
         "relatedJobs" : [work.jobs.wpt]
     },
     {
+        "name" : "Create dynamic, engaging websites",
+        "relatedSkills" : [web],
+        "relatedJobs" : [work.jobs.webdev]
+    },
+    {
+        "name" : "Program in Javascript, HTML, CSS",
+        "relatedSkills" : [web, tech],
+        "relatedJobs" : [work.jobs.webdev]
+    },
+    {
         "name" : "Hide a few Easter eggs, like this one, in my online resume",
         "relatedSkills" : [web],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs.webdev]
     }
 ];
 

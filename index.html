@@ -49,20 +49,16 @@
 
   <script type="text/javascript">
 
-    $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedBioPic);
-    $('#header').prepend(HTMLheaderName.replace('%data%',bio.name));
-
-    $("#footerContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedLinkedin);
-    $("#footerContacts").append(formattedLocation);
-
-    $('#header').append(HTMLskillsStart);
-
-    var x = 0;
-
     bio.display = function(){
+      $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
+      $("#header").prepend(formattedRole);
+      $("#header").prepend(formattedBioPic);
+      $('#header').prepend(HTMLheaderName.replace('%data%',bio.name));
+      $("#footerContacts").append(formattedEmail);
+      $("#footerContacts").append(formattedLinkedin);
+      $("#footerContacts").append(formattedLocation);
+      $('#header').append(HTMLskillsStart);
+      var x = 0;
       while (bio.skills.length > x) {
         var formattedSkills = HTMLskills.replace('%data%', bio.skills[x]);
         $('#skills').append(formattedSkills);
