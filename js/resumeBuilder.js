@@ -26,7 +26,7 @@ var bio = {
     },
     "picture" : "images/bg-face-side.jpg",
     "message" : "Multi-skilled professional at the intersection of communication & technology, analysis & creativity, information & joy",
-    "skills" : [web, video, lead, create, collab, write, comms, perform]
+    "skills" : [web, video, lead, tech, create, collab, write, comms, perform]
 };
 
 var work = {

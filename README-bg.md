@@ -1,5 +1,15 @@
 
 NEXGT STEPS
+
+I am trying this: have only a filtered-in class. It might override the standard "duty" (or "project") class. Then removing it will se tit back. If not, I'll create a filtered-out class.
+.duty, .project, etc. can then have .filtered-in, and filtered-out, added.
+
+
+but all this has to be an .click --- still working on this -- doesn't seem to be working. review the syntax for that .click() thing.
+
+And when you click Show All (under Skills) everything has to go to neutral. hm. maybe we should have no duties appear unless they are filtered in. and maybe show all filters everythihg in. and then when you click it it changes to collapse all and then i filters all skills out.
+
+
 how to make the skills into the filters.
     it looks like i will be using a data-presentation attribute and then that css thing where you can use any attribute and its value. data-presentation="emphasized" data-presentation="deemphasized" data-presentation="neutral" (Ironically the skills vars I set up are basically gone by the time the HTML is created.??) But I think if I include somewhere a js function that I then operate on with other js, i.e. "onClick = filter(%data%)" or whatever that correctg syntax is here exists in one file -- would that be right in the index or helper?? woudl it be aprt of the style?? where do you attach the "onClick" designation to an elemlent? And  anyway then in the main js file - which is currently in index but I would like to pull into a separate file I would think unless that's too ambitious -- I would define that filter functinon, .e. "var filter = function(skill) {//code to change class of all work entries and project entries if they have a duty that has that skill in relateddSkills}
 
@@ -48,3 +58,6 @@ Create a filteredIn class, a filteredOut class, a neutral class that appears whe
 when you click on one of the skills, that li'l div has to have two things happen when you click. it has to run a function that operates on all the work duties with matching relatedSkills (And part of that function will be that jobs without any filteredIn duties will themslevs be filteredOut. and jobs with filiteredIn duties will be filteredIn. so we'll need the jobs to take on ((bubb;e??)) the same style as their duty components.). Secondly, it has to shrink the header similarly to how I did it in the other prjoect.
 
 Show all should also shrink header. Collapse all should return header to a larger thing.
+
+
+maybe use three classes for duties and three classes for jobs (and aren't we donkg projects too?) . then the functionk will iterate through the duties and make a change to its html with the filteredIn or highlighted classdta

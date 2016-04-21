@@ -49,20 +49,31 @@
 
   <script type="text/javascript">
 
+//define a function which will allow the skills to serve as display filters when clicked
+  function filter(skill) {
+     $('[data-related-skills*=skill]').addClass('filtered-in');
+     $('[data-related-skills]').not('[data-related-skills*=skill]').removeClass('filtered-in');
+  }
+
     bio.display = function(){
       $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
       $("#header").prepend(formattedRole);
       $("#header").prepend(formattedBioPic);
       $('#header').prepend(HTMLheaderName.replace('%data%',bio.name));
-      $("#footerContacts").append(formattedEmail);
-      $("#footerContacts").append(formattedLinkedin);
-      $("#footerContacts").append(formattedLocation);
+      $('#footerContacts').append(formattedEmail);
+      $('#footerContacts').append(formattedLinkedin);
+      $('#footerContacts').append(formattedLocation);
       $('#header').append(HTMLskillsStart);
       var x = 0;
       while (bio.skills.length > x) {
-        var formattedSkills = HTMLskills.replace('%data%', bio.skills[x]);
+        var currentSkill = bio.skills[x];
+        var formattedSkills = HTMLskills.replace('%data%', currentSkill);
+        formattedSkills = formattedSkills.replace('%data%', currentSkill);
         $('#skills').append(formattedSkills);
-        x++
+        $('[data-skill=currentSkill]').click(filter(currentSkill));
+        console.log([currentSkill]);
+//        $('[data-skill=currentSkill]').console.log();
+        x++;
       };
     }
 
@@ -87,9 +98,6 @@
           $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
           //add all related job duties to the work-entry -- instead of a description.
             for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
-              console.log(duties[dutiesIndex].relatedJobs);
-              console.log(work.jobs[key]);
-              console.log(matchJobs(duties[dutiesIndex]));
               if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
                 var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
                 formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);

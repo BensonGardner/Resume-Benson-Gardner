@@ -29,6 +29,15 @@ h6 {
   background-color: #eee;
 }
 
+.filtered-in {
+  background-color: yellow;
+  font-size: 13px;
+}
+
+.filtered-out {
+  font-size: 6px;
+  background-color: red;
+}
 
 h1 {
   font-size: 40px;

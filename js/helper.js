@@ -14,7 +14,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data% - ';
@@ -123,7 +123,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
-      locations.push(school.city);
+      locations.push(school.location);
     });
 
     // iterates through work locations and appends each location to
@@ -133,9 +133,9 @@ function initializeMap() {
 
     // still working with this now thtat work is an object not array. earlier syntax was the standard forEach loop.
     //used a variable called job with an annon fcn (job)
-    for (var key in work) {
-      if (work.hasOwnProperty(key)) {
-      locations.push(work[key].city);
+    for (var key in work.jobs) {
+      if (work.jobs.hasOwnProperty(key)) {
+      locations.push(work.jobs[key].city);
     };
   };
     return locations;
@@ -203,16 +203,20 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-      locations.forEach(function(place){
+      for (var place in locations) {
+      // New section to check if locations[place] exists
+      // This keeps google maps from breaking if a location field is empty.
+      if (!locations[place]) {
+        continue;
+      }
       // the search request object
       var request = {
-        query: place
+        query: locations[place]
       };
-
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
-    });
+    };
   }
 
   // Sets the boundaries of the map based on pin locations
