@@ -12,6 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
   clear:both;
 }
 
@@ -23,25 +24,48 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.duty-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: #ff9;
+  font-size: 10px;
+  margin: 5px;
+  padding: 5px 0;
+  border-radius: 10px;
+  border-width: 2px;
+  min-height: 15px;
+  min-width: 50px;
+  max-width: 310px;
+  font-weight: 300;
 }
 
 .duty {
-  background-color: #eee;
+  margin: 0 10px;
+  width: auto;
 }
 
 .filtered-in {
-  background-color: yellow;
-  font-size: 13px;
+  font-size: 14px;
+  height: 45px;
+  /*using Red background for testing */
+  background-color: #A00;
 }
 
-.filtered-out {
+/*.filtered-out {
   font-size: 6px;
   background-color: red;
-}
+}*/
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #ff9;
   line-height: 48px;
   display: inline;
 }
@@ -49,62 +73,68 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #333666;
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
+  font-weight: 500;
+  padding: 0 5%;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
   color: #000;
-  line-height: 22px;
+  font-style: italic;
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+  display: inline-block;
+  margin-top: 10px;
+  color: #000;
+  font-style: italic;
 }
 
 h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
-
+ {
+  padding: 10px 5%;
 }
-
 
 .date-text {
   font-style: italic;
+  font-weight: 300;
   font-size: 14px;
   color: #999;
   line-height: 16px;
   float: left;
+  display: flex;
+  width: 100%;
 }
 
 .location-text {
   font-style: italic;
+  font-weight: 300;
   font-size: 14px;
   color: #999;
   line-height: 16px;
   float: right;
-
+  width: 100%;
 }
 
 p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
+  width: 100%;
 }
 
 a {
   color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
-  display: block;
+  width: 100%;
 }
 
 .welcome-message {
@@ -115,36 +145,36 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #ff9;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #ff9;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #ff9;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+  font-weight: 400;
+  color: #f3f3f3;
 }
 
-.gray {
-  background-color: #f3f3f3;
+.entries {
+  background-color: #fff;
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.dark-blue {
+  background-color: #333666;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #333666;
 }
 
 .flex-box {

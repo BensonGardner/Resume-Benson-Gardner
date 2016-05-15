@@ -39,7 +39,7 @@ var work = {
             "description" : "I edit and manage certain communications from the state superintendent of public instruction. I am the front-end developer in the Office of the State Superintendent. I also coordinate multimedia production at the agency. That includes leading teams of producers in creating high quality video pieces in a variety of styles. I create guidelines for agency staff and consult and train to ensure our most important videos are high quailty. I also led the effort to create a pocliy to guide the organization's social media use, back when that was a really new thing."
         },
         "webdev" : {
-            "position" : "Front-end Web Developer",
+            "position" : "Front-End Web Developer",
             "employer" : "",
             "city" : "Madison, Wisconsin, USA",
             "years" : "2016 -"
@@ -94,7 +94,7 @@ var education = {
         {
             "name" : "Menomonie High School",
             "location" : "Menomonie, Wisconsin, USA",
-            "dates" : "1987- 1991",
+            "dates" : "1987 - 1991",
             "notable" : ["Top 3 percent of class. All-State Scholar. National Honors Society."]
         }
     ],

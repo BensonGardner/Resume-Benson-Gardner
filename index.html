@@ -14,7 +14,9 @@
 
   <script src="js/helper.js"></script>
 
- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,300,300italic,100' rel='stylesheet' type='text/css'>
 
   <meta name="viewport" content="width=device-width">
 </head>
@@ -26,19 +28,19 @@
     </div>
     <div style="clear: both;"></div>
 
-    <div id="workExperience" class="gray">
+    <div id="workExperience" class="entries">
       <h2>Work Experience</h2>
     </div>
     <div id="projects">
       <h2>Projects</h2>
     </div>
-    <div id="education" class="gray">
+    <div id="education" class="entries">
       <h2>Education</h2>
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
-    <div id="lets-connect" class="dark-gray">
+    <div id="lets-connect" class="dark-blue">
       <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
@@ -49,69 +51,72 @@
 
   <script type="text/javascript">
 
-//define a function which will allow the skills to serve as display filters when clicked
-  function filter(skill) {
-     $('[data-related-skills*=skill]').addClass('filtered-in');
-     $('[data-related-skills]').not('[data-related-skills*=skill]').removeClass('filtered-in');
-  }
+// currently the skills are sccessfully calling this function on click, however it doesn't receogniaez the event.data.skillToFilter portion of the expression -- it has no problem with the aame expression when you substitue a string such as "Party".
+//A clue: console.log indicates that skillToFilter is undefined.
+  function filterDuties(event) {
+    console.log(skillToFilter);
+    $('[data-related-skills*=event.data.skillToFilter]').addClass('filtered-in');
+    $('[data-related-skills]').not('[data-related-skills*=event.data.skillToFilter]').removeClass('filtered-in');
+  };
 
-    bio.display = function(){
-      $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
-      $("#header").prepend(formattedRole);
-      $("#header").prepend(formattedBioPic);
-      $('#header').prepend(HTMLheaderName.replace('%data%',bio.name));
-      $('#footerContacts').append(formattedEmail);
-      $('#footerContacts').append(formattedLinkedin);
-      $('#footerContacts').append(formattedLocation);
-      $('#header').append(HTMLskillsStart);
-      var x = 0;
-      while (bio.skills.length > x) {
-        var currentSkill = bio.skills[x];
-        var formattedSkills = HTMLskills.replace('%data%', currentSkill);
-        formattedSkills = formattedSkills.replace('%data%', currentSkill);
-        $('#skills').append(formattedSkills);
-        $('[data-skill=currentSkill]').click(filter(currentSkill));
-        console.log([currentSkill]);
-//        $('[data-skill=currentSkill]').console.log();
-        x++;
-      };
+  bio.display = function(){
+    $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedBioPic);
+    $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
+    $('#footerContacts').append(formattedEmail);
+    $('#footerContacts').append(formattedLinkedin);
+    $('#footerContacts').append(formattedLocation);
+    $('#header').append(HTMLskillsStart);
+    var x = 0;
+    while (bio.skills.length > x) {
+      var currentSkill = bio.skills[x];
+      var formattedSkills = HTMLskills.replace('%data%', currentSkill);
+      formattedSkills = formattedSkills.replace('%data%', currentSkill);
+      $('#skills').append(formattedSkills);
+      $('[data-skill="' + currentSkill + '"]').click({skillToFilter:currentSkill},filterDuties);
+      x++;
     }
+  };
 
-    bio.display();
+  bio.display();
 
-    work.display = function(){
-      for (var key in work.jobs) {
-        if (work.jobs.hasOwnProperty(key)) {
-          $('#workExperience').append(HTMLworkStart);
-          /* Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property. */
-          matchJobs = function(duty) {
-            if(duty === work.jobs[key]) {
-            return true;
-          }
-        };
-        if (Boolean(work.jobs[key].employer) === true) {
-            $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer))
-              + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
-          } else {
-             $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work.jobs[key].position));
-          }
-          $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
+  var currentJob;
+
+  matchJobs = function(duty) {
+    if(duty === currentJob) {
+      return true;
+    }
+  };
+
+  work.display = function(){
+    for (var key in work.jobs) {
+      if (work.jobs.hasOwnProperty(key)) {
+        currentJob = work.jobs[key];
+        $('#workExperience').append(HTMLworkStart);
+      }
+        // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
+      if (Boolean(work.jobs[key].employer) === true) {
+        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
+      } else {
+          $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work.jobs[key].position));
+      }
+      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
           //add all related job duties to the work-entry -- instead of a description.
-            for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
-              if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
-                var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
-                formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
-                $('.work-entry:last').append(formattedDuty);
-            }
-          }
+      for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
+        if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
+           var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
+            formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
+            $('.work-entry:last').append(formattedDuty);
         }
       }
-    };
+    }
+  };
 
-    work.display();
+  work.display();
 
-    projects.display = function() {
-     for (projectIndex = 0; projectIndex < projects.projectEntries.length; projectIndex++) {
+  projects.display = function() {
+    for (projectIndex = 0; projectIndex < projects.projectEntries.length; projectIndex++) {
       $('#projects').append(HTMLprojectStart);
       var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projectEntries[projectIndex].name);
       formattedProjectName = formattedProjectName.replace('#' , projects.projectEntries[projectIndex].link);
@@ -120,40 +125,40 @@
       var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projectEntries[projectIndex].challenge);
       var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projectEntries[projectIndex].role);
       $('.project-entry:last').append(formattedProjectImage + formattedProjectName + formattedProjectRole + formattedProjectChallenge);
-      };
     }
+  };
 
-    projects.display();
+  projects.display();
 
   education.display = function (){
     for (schoolsIndex = 0; schoolsIndex < education.schools.length; schoolsIndex++) {
       $('#education').append(HTMLschoolStart);
       var formattedSchoolName = HTMLschoolName.replace('%data%' , education.schools[schoolsIndex].name);
-      if (education.schools[schoolsIndex].degree != undefined) {
+      if (education.schools[schoolsIndex].degree !== undefined) {
         var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
       } else {
         var formattedSchoolDegree = "</a>";
-      };
+      }
       var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
       var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
-       if (education.schools[schoolsIndex].major != undefined) {
+       if (education.schools[schoolsIndex].major !== undefined) {
         var formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].major);
       } else {
         var formattedSchoolMajor = "";
-      };
+      }
       var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
       $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolNotable);
-    };
+    }
     $('#education').append(HTMLonlineClasses);
     for (onlinecourseIndex = 0; onlinecourseIndex < education.onlineCourses.length; onlinecourseIndex++) {
         $('#education').append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , education.onlineCourses[onlinecourseIndex].title);
+        formattedOnlineTitle = formattedOnlineTitle.replace('#' , education.onlineCourses[onlinecourseIndex].URL);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , education.onlineCourses[onlinecourseIndex].school);
         var formattedOnlineDates = HTMLonlineDates.replace('%data%' , education.onlineCourses[onlinecourseIndex].dates);
-        var formattedOnlineURL = HTMLonlineURL.replace('%data%' , education.onlineCourses[onlinecourseIndex].URL);
-        $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL);
-    };
-  }
+        $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates);
+    }
+  };
 
   education.display();
 
@@ -182,7 +187,7 @@
     }
 
     $(document).click(function(loc) {
-      logClicks(event.pageX,event.pageY)
+      logClicks(event.pageX,event.pageY);
     });
 
     $("#mapDiv").append(googleMap);

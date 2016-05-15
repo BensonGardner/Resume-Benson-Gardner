@@ -14,22 +14,22 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="white-text"><a href="#">%data%</a></span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data% - ';
 var HTMLworkTitle = '%data%</a>';
-var HTMLworkYears = '<div class="date-text">%data%';
+var HTMLworkYears = '<div class="date-text"><br>%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLDuty = '<div class="duty" data-related-skills="%data%">%%data%%</div>';
+var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty">%%data%%</div></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectRole = '<p><br><strong>My Role:</strong> %data%</p>';
-var HTMLprojectChallenge = '<p><br><strong>The Challenge:</strong> %data%</p>';
+var HTMLprojectRole = '<br><h3>My Role:</h3><p> %data%</p>';
+var HTMLprojectChallenge = '<br><h3>The Challenge:</h3><p> %data%</p>';
 var HTMLprojectImage = '<a href = "#"><img width="300px"; src="%data%"></a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
