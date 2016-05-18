@@ -51,12 +51,10 @@
 
   <script type="text/javascript">
 
-// currently the skills are sccessfully calling this function on click, however it doesn't receogniaez the event.data.skillToFilter portion of the expression -- it has no problem with the aame expression when you substitue a string such as "Party".
-//A clue: console.log indicates that skillToFilter is undefined.
   function filterDuties(event) {
-    console.log(skillToFilter);
-    $('[data-related-skills*=event.data.skillToFilter]').addClass('filtered-in');
-    $('[data-related-skills]').not('[data-related-skills*=event.data.skillToFilter]').removeClass('filtered-in');
+    console.log(event.data.skillToFilter);
+    $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
+    $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
   };
 
   bio.display = function(){
