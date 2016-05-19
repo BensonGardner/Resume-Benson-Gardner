@@ -396,7 +396,8 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data" , bio.contacts.twitter);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
@@ -415,6 +416,8 @@ bio.display = function(){
     $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
     $('#footerContacts').append(formattedEmail);
     $('#footerContacts').append(formattedLinkedin);
+    $('#footerContacts').append(formattedGitHub);
+    $('footerContacts').append(formattedTwitter);
     $('#footerContacts').append(formattedLocation);
     $('#header').append(HTMLskillsStart);
     var x = 0;
