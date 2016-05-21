@@ -9,6 +9,7 @@ var collab = "collaboration";
 var create = "creativity & innovation";
 var perform = "acting, voiceover, performance";
 var tech = "specific technology platforms";
+var none = "collapse all";
 
 var bio = {
     "name" : "Benson Gardner",
@@ -23,7 +24,7 @@ var bio = {
     },
     "picture" : "images/bg-face-side.jpg",
     "message" : "Multi-skilled professional at the intersection of communication & technology, analysis & creativity, information & joy",
-    "skills" : [web, video, lead, tech, create, collab, write, comms, perform]
+    "skills" : [lead, web, video, tech, write, create, collab, perform, comms, none]
 };
 
 var work = {
