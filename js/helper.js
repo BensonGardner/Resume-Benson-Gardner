@@ -23,7 +23,7 @@ var HTMLworkYears = '<div class="date-text"><br>%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty">%%data%%</div></div>';
+var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty"><div class="ripple-positioner"><div data-related-skills="%data%-ripple" class="ripple"></div></div>%%data%%</div></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';

@@ -54,11 +54,38 @@ h6 {
   background-color: rgba(255, 255, 153, 1.0);
 }
 
+.ripple-positioner {
+  position: relative;
+  height: 0;
+  width: 0;
+}
+
+.ripple {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 1.0;
+  -webkit transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease, opacity 1.0s;
+  transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease, opacity 1.0s;
+}
+
 .filtered-in {
   font-size: 15px;
   background-color: rgba(255, 255, 153, 1.0);
 /*  -webkit transition: border-width 0.1s ease-in, border-color 0.5s ease-in, font-size 0.1s ease-in, min-height 0.15s ease-in;
 /*  transition: border-width 0.1s ease-in, border-color 0.5s ease-in, font-size 0.1s ease-in, min-height 0.15s ease-in; */
+}
+
+.luminous {
+  left: 25px;
+  top: 13px;
+  height: 200px;
+  width: 80%;
+  background-color: white;
+  opacity: 0;
+  -webkit: blur(45%);
+  filter: blur(45%);
+  transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease, opacity 1.0s;
 }
 
 /*.filtered-out {

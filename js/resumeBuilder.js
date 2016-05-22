@@ -408,6 +408,7 @@ function filterDuties(event) {
     console.log(event.data.skillToFilter);
     $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
     $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
+    $('[data-related-skills*="' + event.data.skillToFilter + '-ripple"]').addClass('luminous');
 };
 
 bio.display = function(){
@@ -457,6 +458,7 @@ work.display = function(){
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
            var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
+            formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
             formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
             $('.work-entry:last').append(formattedDuty);
         }
