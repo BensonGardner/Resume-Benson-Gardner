@@ -1,19 +1,19 @@
 /* Set up skills-at-a-glance as a set of variables so that they can be used as filter buttons
 /* to easily select and view related jobs and projects */
-var video = "video and media production";
-var lead = "leadership";
-var web = "web development";
-var write = "writing & journalism";
-var comms = "other communication";
-var collab = "collaboration";
-var create = "creativity & innovation";
-var perform = "acting, voiceover, performance";
-var tech = "specific technology platforms";
-var none = "collapse all";
+var video = "Video and Media Production";
+var lead = "Leadership";
+var web = "Web Development";
+var write = "Writing & Journalism";
+var comms = "Other Communication";
+var collab = "Collaboration";
+var create = "Creativity & Innovation";
+var perform = "Acting, Voiceover, Performance";
+var tech = "Specific Technology Platforms";
+var none = "Collapse All";
 
 var bio = {
     "name" : "Benson Gardner",
-    "role" : "Front-End Developer, Multimedia Producer, Project Manager, Communicator",
+    "role" : "Communication, Technology, Innovation",
     "contacts" : {
         "mobile" : "608-556-4846",
         "email" : "bensongardner@yahoo.com",
@@ -23,7 +23,7 @@ var bio = {
         "location" : "Madison, Wisconsin, USA"
     },
     "picture" : "images/bg-face-side.jpg",
-    "message" : "Multi-skilled professional at the intersection of communication & technology, analysis & creativity, information & joy",
+    "message" : "I create engaging and beautiful experiences in service of a mission.",
     "skills" : [lead, web, video, tech, write, create, collab, perform, comms, none]
 };
 
@@ -405,11 +405,22 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
 
 function filterDuties(event) {
-    console.log(event.data.skillToFilter);
-    $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
-    $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
-    $('[data-related-skills*="' + event.data.skillToFilter + '-ripple"]').addClass('luminous');
-};
+    var clickedButton = $(this).children();
+    if (clickedButton.hasClass('filtering')) {
+        $('.filtering').removeClass('filtering');
+        $('.luminous').removeClass('luminous');
+        $('.duty-wrapper').removeClass('filtered-in');
+    } else {
+        $('.filtering').removeClass('filtering');
+        $('.luminous').removeClass('luminous');
+        $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
+        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
+        $('.emphasis.filtered-in').addClass('luminous');
+        $('.emphasis.filtered-in').removeClass('filtered-in');
+        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('luminous');
+        $(this).children().addClass('filtering');
+    }
+}
 
 bio.display = function(){
     $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
@@ -432,6 +443,30 @@ bio.display = function(){
       x++;
     }
 };
+
+function shrinkHeader() {
+    var content = $('#page-content');
+    var scrollStatus = content.scrollTop();
+    var headerHeight = Math.max((270 - scrollStatus), 100);
+    var headerPadding = Math.max(5,(10 - (0.1 * scrollStatus)));
+    var nameSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
+    var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
+    var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
+    var taglineSize = Math.max(0.7 - (0.008 * scrollStatus),0.15);
+    var taglineOpacity = 1.0 - (0.02 * scrollStatus);
+    console.log(content + ' and ' + scrollStatus + ' and ' + headerHeight + ' and ' + headerPadding);
+    $('#header').css('height', headerHeight);
+    $('#header').css('paddingTop', headerPadding + 'px');
+    $('#header').css('paddingBottom' , headerPadding + 'px');
+    $('.biopic').css('maxWidth' , headerHeight + 'px');
+    $('#page-content').css('paddingTop' , '115 + (2 * ' + headerPadding + ') px');
+    $('#name').css('fontSize' , nameSize + 'em');
+    $('#name').css('marginBottom' , nameBottomMargin + 'px');
+    $('#name').css('marginTop' , nameTopMargin + 'px');
+    $('.welcome-message').css('fontSize' , taglineSize + 'em');
+    $('.welcome-message').css('opacity' , taglineOpacity);
+    console.log($('#header').css('height'));
+}
 
 var currentJob;
 

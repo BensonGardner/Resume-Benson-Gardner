@@ -1,5 +1,5 @@
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -14,7 +14,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Filter by Skill Set:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="white-text"><a href="javascript:;">%data%</a></span></li>';
+var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="skill"><a href="javascript:;">%data%</a></span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data% - ';
@@ -23,7 +23,7 @@ var HTMLworkYears = '<div class="date-text"><br>%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty"><div class="ripple-positioner"><div data-related-skills="%data%-ripple" class="ripple"></div></div>%%data%%</div></div>';
+var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty"><div class="emphasis-positioner"><div data-related-skills="%data%-ripple" class="emphasis"></div></div>%%data%%</div></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
