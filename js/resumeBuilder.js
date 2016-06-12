@@ -1,15 +1,14 @@
 /* Set up skills-at-a-glance as a set of variables so that they can be used as filter buttons
 /* to easily select and view related jobs and projects */
-var video = "Video and Media Production";
+var video = "Multimedia";
 var lead = "Leadership";
 var web = "Web Development";
 var write = "Writing & Journalism";
 var comms = "Other Communication";
 var collab = "Collaboration";
 var create = "Creativity & Innovation";
-var perform = "Acting, Voiceover, Performance";
-var tech = "Specific Technology Platforms";
-var none = "Collapse All";
+var perform = "Acting, Voiceover";
+var tech = "Specific Platforms";
 
 var bio = {
     "name" : "Benson Gardner",
@@ -22,9 +21,9 @@ var bio = {
         "linkedin" : "https://www.linkedin.com/in/benson-gardner-7009859",
         "location" : "Madison, Wisconsin, USA"
     },
-    "picture" : "images/bg-face-side.jpg",
-    "message" : "I create engaging and beautiful experiences in service of a mission.",
-    "skills" : [lead, web, video, tech, write, create, collab, perform, comms, none]
+    "picture" : "images/bg-logo.svg",
+    "message" : "Engaging, informative, beautiful experiences in service of a mission.",
+    "skills" : [lead, web, video, tech, write, create, collab, perform, comms]
 };
 
 var work = {
@@ -404,34 +403,63 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
 
+// Need to fix the collapse all ---- actually I think this has to be changed completely
+//to something like "hide all" to make the duties completely disappear. or acutally
+//then it has to be a Show Job Duties / Hide Job Duties  button.
+
 function filterDuties(event) {
+    $('.duty-wrapper').removeClass('hidden');
+    $('.duty-wrapper').children().removeClass('hidden');
+    $('.show-hide-button').addClass('showing');
+    $('.show-hide-button a').text('-');
     var clickedButton = $(this).children();
     if (clickedButton.hasClass('filtering')) {
         $('.filtering').removeClass('filtering');
-        $('.luminous').removeClass('luminous');
-        $('.duty-wrapper').removeClass('filtered-in');
+        $('.filtered-in').removeClass('filtered-in');
     } else {
         $('.filtering').removeClass('filtering');
-        $('.luminous').removeClass('luminous');
         $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
+        $('[data-related-skills*="' + event.data.skillToFilter + '"]').children().addClass('filtered-in');
         $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
-        $('.emphasis.filtered-in').addClass('luminous');
+        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').children().removeClass('filtered-in');
         $('.emphasis.filtered-in').removeClass('filtered-in');
-        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('luminous');
         $(this).children().addClass('filtering');
+    }
+}
+
+function showHide() {
+    $('.filtering').removeClass('filtering');
+    var clickedButton = $(this);
+    console.log(clickedButton);
+    if (clickedButton.hasClass('showing')) {
+        $('.duty-wrapper').addClass('hidden');
+        $('.duty-wrapper').children().addClass('hidden');
+        $('.show-hide-button').removeClass('showing');
+        $('.show-hide-button a').text('+');
+//        $('.duty-wrapper').removeClass('filtered-in');
+//        $('.duty-wrapper').children().removeClass('filtered-in');
+    } else {
+        $('.duty-wrapper').removeClass('hidden');
+        $('.duty-wrapper').children().removeClass('hidden');
+        $('.duty-wrapper').addClass('filtered-in');
+        $('.duty-wrapper').children().addClass('filtered-in');
+        $('.show-hide-button').addClass('showing');
+        $('.show-hide-button a').text('-');
     }
 }
 
 bio.display = function(){
     $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedBioPic);
+    /*$("#header").prepend(formattedRole);*/
     $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
+    $("#header").prepend(formattedBioPic);
     $('#footerContacts').append(formattedEmail);
     $('#footerContacts').append(formattedLinkedin);
     $('#footerContacts').append(formattedGitHub);
-    $('footerContacts').append(formattedTwitter);
+    $('#footerContacts').append(formattedTwitter);
     $('#footerContacts').append(formattedLocation);
+    $('#header').append(HTMLshowHideButton);
+    $('.show-hide-button').click(showHide);
     $('#header').append(HTMLskillsStart);
     var x = 0;
     while (bio.skills.length > x) {
@@ -448,23 +476,24 @@ function shrinkHeader() {
     var content = $('#page-content');
     var scrollStatus = content.scrollTop();
     var headerHeight = Math.max((270 - scrollStatus), 100);
-    var headerPadding = Math.max(5,(10 - (0.1 * scrollStatus)));
-    var nameSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
+    var fontSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
     var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
     var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
-    var taglineSize = Math.max(0.7 - (0.008 * scrollStatus),0.15);
+    var taglineSize = Math.max(1.15 - (0.008 * scrollStatus),0.15);
+    var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
     var taglineOpacity = 1.0 - (0.02 * scrollStatus);
-    console.log(content + ' and ' + scrollStatus + ' and ' + headerHeight + ' and ' + headerPadding);
+    console.log(content + ' and ' + scrollStatus + ' and ' + headerHeight);
     $('#header').css('height', headerHeight);
-    $('#header').css('paddingTop', headerPadding + 'px');
-    $('#header').css('paddingBottom' , headerPadding + 'px');
-    $('.biopic').css('maxWidth' , headerHeight + 'px');
-    $('#page-content').css('paddingTop' , '115 + (2 * ' + headerPadding + ') px');
-    $('#name').css('fontSize' , nameSize + 'em');
+    $('.biopic-container').css('maxWidth' , headerHeight + 'px');
+//    $('#page-content').css('paddingTop' , '(300 + ' + headerHeight + ') px');
+    $('#name').css('fontSize' , fontSize + 'em');
+    $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
     $('#name').css('marginTop' , nameTopMargin + 'px');
     $('.welcome-message').css('fontSize' , taglineSize + 'em');
     $('.welcome-message').css('opacity' , taglineOpacity);
+    $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
+    console.log(backgroundOpacity);
     console.log($('#header').css('height'));
 }
 

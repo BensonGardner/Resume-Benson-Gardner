@@ -10,20 +10,21 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<div class="biopic-container"><img src="%data%" class="biopic" alt="Benson Gardner logo"></div>';
+var HTMLwelcomeMsg = '<br><span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Filter by Skill Set:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item" data-skill="%data%"><span class="skill"><a href="javascript:;">%data%</a></span></li>';
+var HTMLshowHideButton = '<div id="show-hide-container"><span class="show-hide-button"><a href="javascript:;">+</a></span></div>'
+var HTMLskillsStart = '<ul id="skills" class="flex-box"></ul>';
+var HTMLskills = '<li data-skill="%data%"><span class="skill"><a href="javascript:;">%data%</a></span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data% - ';
-var HTMLworkTitle = '%data%</a>';
+var HTMLworkEmployer = '<span class="work">%data% - ';
+var HTMLworkTitle = '%data%</a></span>';
 var HTMLworkYears = '<div class="date-text"><br>%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty"><div class="emphasis-positioner"><div data-related-skills="%data%-ripple" class="emphasis"></div></div>%%data%%</div></div>';
+var HTMLDuty = '<div class="duty-wrapper" data-related-skills="%data%"><div class="duty">%%data%%</div></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
