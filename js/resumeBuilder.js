@@ -488,6 +488,7 @@ function shrinkHeader() {
 //    $('#page-content').css('paddingTop' , '(300 + ' + headerHeight + ') px');
     $('#name').css('fontSize' , fontSize + 'em');
     $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
+    $('.show-hide-button').css('fontSize' , (fontSize * 0.7) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
     $('#name').css('marginTop' , nameTopMargin + 'px');
     $('.welcome-message').css('fontSize' , taglineSize + 'em');
