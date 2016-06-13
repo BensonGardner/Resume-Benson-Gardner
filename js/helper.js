@@ -1,4 +1,4 @@
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
+var HTMLheaderName = '<div class="name-message-container"><h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
@@ -10,8 +10,8 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<div class="biopic-container"><img src="%data%" class="biopic" alt="Benson Gardner logo"></div>';
-var HTMLwelcomeMsg = '<br><span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<img src="%data%" class="biopic" alt="Benson Gardner logo">';
+var HTMLwelcomeMsg = '<div class="welcome-message">%data%</div></div>';
 
 var HTMLshowHideButton = '<div id="show-hide-container"><span class="show-hide-button"><a href="javascript:;">+</a></span></div>'
 var HTMLskillsStart = '<ul id="skills" class="flex-box"></ul>';

@@ -115,7 +115,7 @@ h1 {
   font-size: 40px;
   color: rgba(255, 255, 158, 1.0);
   line-height: 48px;
-  display: inline;
+  display: block;
 }
 
 h2 {
@@ -191,6 +191,10 @@ a {
   line-height: 28px;
 }
 
+.skills-container {
+  padding: 10px 0 0;
+}
+
 #show-hide-container {
   display: -webkit-flex;
   display: flex;
@@ -233,10 +237,11 @@ a {
   background-color: rgba(255, 255, 158, 1.0);
 }
 
+/* NOT USING
 #skills-h3 {
   color: rgba(251, 251, 247, 1.0);
   display: none;
-}
+}*/
 
 .orange {
   background-color: #ff9;
@@ -265,6 +270,13 @@ a {
   position: fixed;
   z-index: 1000;
   width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .flex-box {
@@ -281,25 +293,36 @@ ul {
 }
 
 
-.biopic-container {
+.bio-container {
   position: relative;
   padding: 0;
   margin: 0;
-  max-width: 250px;
-  min-width: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
 }
 
 .biopic {
   height: 100%;
   float: left;
-  padding: 0 10px 0 0;
+  margin: 0;
+}
+
+.name-message-container {
+  -webkit-display: flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin-left: 10px;
 }
 
 .role {
   font-color: #555599;
 }
 
-img {
+.project-entry img {
   padding: 10px;
 }
 
@@ -320,21 +343,21 @@ span {
 }
 
 @media only screen and (max-width:900px) {
-  .biopic {
-    min-width: 175px;
-  }
+
 }
 
 @media only screen and (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
   }
-  .biopic {
-    min-width: 50px;
-  }
+
   .welcome-message {
     display: none;
   }
+
+/*  .bio-container {
+    max-width: 250px;
+  }*/
 }
 
 #map {
@@ -350,7 +373,6 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
   .biopic {
     display: block;
   }

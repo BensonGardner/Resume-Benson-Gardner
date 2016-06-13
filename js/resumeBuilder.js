@@ -256,14 +256,44 @@ var duties = [
         "relatedJobs" : [work.jobs.indie]
     },
     {
-        "name" : "Edit video using Adobe Creative Cloud (e.g., Premiere, AfterEffects, Audition)",
+        "name" : "Adobe Creative Cloud (Premiere Pro, AfterEffects, Audition, Photoshop, Dreamweaver, Illustrator)",
         "relatedSkills" : [video, tech],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+    },
+    {
+        "name" : "Manage & edit web content",
+        "relatedSkills" : [lead, write, web, tech],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt]
+    },
+    {
+        "name" : "HTML",
+        "relatedSkills" : [web, tech],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt, work.jobs.webdev]
+    },
+    {
+        "name" : "CSS",
+        "relatedSkills" : [web, tech],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.webdev]
+    },
+    {
+        "name" : "Drupal",
+        "relatedSkills" : [web, tech],
         "relatedJobs" : [work.jobs.dpi]
     },
     {
-        "name" : "Manage and edit web content using HTML, CSS, Adobe Dreamweaver, Drupal, other content management, FTP",
-        "relatedSkills" : [lead, write, web, tech],
+        "name" : "Use in-house content management",
+        "relatedSkills" : [web, tech],
         "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt]
+    },
+    {
+        "name" : "FTP",
+        "relatedSkills" : [web, tech],
+        "relatedJobs" : [work.jobs.wpr, work.jobs.wpt]
+    },
+    {
+        "name" : "Register & manage web domains",
+        "relatedSkills" : [web],
+        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
     },
     {
         "name" : "Assist in media relations",
@@ -316,7 +346,17 @@ var duties = [
         "relatedJobs" : [work.jobs.indie]
     },
     {
-        "name" : "Edit video using FinalCut Pro, Vegas Video",
+        "name" : "FinalCut Pro",
+        "relatedSkills" : [video, tech],
+        "relatedJobs" : [work.jobs.indie]
+    },
+    {
+        "name" : "Avid Media Composer",
+        "relatedSkills" : [video, tech],
+        "relatedJobs" : [work.jobs.wpt]
+    },
+    {
+        "name" : "Vegas Video",
         "relatedSkills" : [video, tech],
         "relatedJobs" : [work.jobs.indie]
     },
@@ -381,13 +421,18 @@ var duties = [
         "relatedJobs" : [work.jobs.webdev]
     },
     {
-        "name" : "Program in Javascript, HTML, CSS",
+        "name" : "Javascript",
+        "relatedSkills" : [web, tech],
+        "relatedJobs" : [work.jobs.webdev]
+    },
+    {
+        "name" : "Git & GitHub",
         "relatedSkills" : [web, tech],
         "relatedJobs" : [work.jobs.webdev]
     },
     {
         "name" : "Hide a few Easter eggs, like this one, in my online resume",
-        "relatedSkills" : [web],
+        "relatedSkills" : [web, create],
         "relatedJobs" : [work.jobs.webdev]
     }
 ];
@@ -449,18 +494,18 @@ function showHide() {
 }
 
 bio.display = function(){
-    $("#header").prepend(HTMLwelcomeMsg.replace('%data%', bio.message));
     /*$("#header").prepend(formattedRole);*/
-    $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
-    $("#header").prepend(formattedBioPic);
+    $('.bio-container').prepend(HTMLheaderName.replace('%data%', bio.name));
+    $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.message));
+    $('.bio-container').prepend(formattedBioPic);
     $('#footerContacts').append(formattedEmail);
     $('#footerContacts').append(formattedLinkedin);
     $('#footerContacts').append(formattedGitHub);
     $('#footerContacts').append(formattedTwitter);
     $('#footerContacts').append(formattedLocation);
-    $('#header').append(HTMLshowHideButton);
+    $('.skills-container').append(HTMLshowHideButton);
     $('.show-hide-button').click(showHide);
-    $('#header').append(HTMLskillsStart);
+    $('.skills-container').append(HTMLskillsStart);
     var x = 0;
     while (bio.skills.length > x) {
       var currentSkill = bio.skills[x];
@@ -475,17 +520,18 @@ bio.display = function(){
 function shrinkHeader() {
     var content = $('#page-content');
     var scrollStatus = content.scrollTop();
-    var headerHeight = Math.max((270 - scrollStatus), 100);
+    var bioContainerWidth = Math.max((600 - scrollStatus), 400);
     var fontSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
     var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
     var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
     var taglineSize = Math.max(1.15 - (0.008 * scrollStatus),0.15);
     var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
     var taglineOpacity = 1.0 - (0.02 * scrollStatus);
-    console.log(content + ' and ' + scrollStatus + ' and ' + headerHeight);
-    $('#header').css('height', headerHeight);
-    $('.biopic-container').css('maxWidth' , headerHeight + 'px');
-//    $('#page-content').css('paddingTop' , '(300 + ' + headerHeight + ') px');
+    var biopicWidth = Math.max(100, (150 - (50 * scrollStatus / 66)));
+    console.log(content + ' and ' + scrollStatus + ' and ' + bioContainerWidth);
+//    $('#header').css('height', bioContainerWidth);
+//    $('.bio-container').css('maxWidth' , bioContainerWidth + 'px');
+//    $('#page-content').css('paddingTop' , '(300 + ' + bioContainerWidth + ') px');
     $('#name').css('fontSize' , fontSize + 'em');
     $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
     $('.show-hide-button').css('fontSize' , (fontSize * 0.7) + 'em');
@@ -494,6 +540,7 @@ function shrinkHeader() {
     $('.welcome-message').css('fontSize' , taglineSize + 'em');
     $('.welcome-message').css('opacity' , taglineOpacity);
     $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
+    $('.biopic').css('width' , biopicWidth + 'px');
     console.log(backgroundOpacity);
     console.log($('#header').css('height'));
 }
