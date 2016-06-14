@@ -3,11 +3,11 @@
 var video = "Multimedia";
 var lead = "Leadership";
 var web = "Web Development";
-var write = "Writing & Journalism";
+var write = "Writing, Journalism";
 var comms = "Other Communication";
 var collab = "Collaboration";
-var create = "Creativity & Innovation";
-var perform = "Acting, Voiceover";
+var create = "Creativity, Innovation";
+var perform = "Speaking, Performance";
 var tech = "Specific Platforms";
 
 var bio = {
@@ -23,7 +23,7 @@ var bio = {
     },
     "picture" : "images/bg-logo.svg",
     "message" : "Engaging, informative, beautiful experiences in service of a mission.",
-    "skills" : [lead, web, video, tech, write, create, collab, perform, comms]
+    "skills" : [lead, web, video, write, create, collab, perform, tech, comms]
 };
 
 var work = {
@@ -187,23 +187,23 @@ var duties = [
     },
     {
         "name" : "Create video pieces",
-        "relatedSkills" : [video, collab, perform, create, write],
+        "relatedSkills" : [video, collab, create, write],
         "relatedJobs" : [work.jobs.dpi, work.jobs.wpt, work.jobs.indie]
     },
     {
         "name" : "Record narration and voiceover",
-        "relatedSkills" : [video, perform],
+        "relatedSkills" : [video, perform, comms],
         "relatedJobs" : [work.jobs.dpi, work.jobs.wpt, work.jobs.indie]
     },
     {
         "name" : "Produce award-winning radio news segments for statewide broadcast",
-        "relatedSkills" : [video, perform, write],
+        "relatedSkills" : [video, create, perform, write],
         "relatedJobs" : [work.jobs.wpr]
     },
     {
         "name" : "Comic acting",
-        "relatedSkills" : [perform],
-        "relatedJobs" : [work.jobs.improv]
+        "relatedSkills" : [perform, create],
+        "relatedJobs" : [work.jobs.improv, work.jobs.indie]
     },
     {
         "name" : "Craft and oversee wording and visual presentation of agency messages for videos",
@@ -222,7 +222,7 @@ var duties = [
     },
     {
         "name" : "Assemble, facilitate workgroups and committees",
-        "relatedSkills" : [lead, collab],
+        "relatedSkills" : [lead, collab, perform],
         "relatedJobs" : [work.jobs.dpi]
     },
     {
@@ -252,7 +252,7 @@ var duties = [
     },
     {
         "name" : "Serve as writer, photo researcher in creation of historical markers for permanent outdoor installation",
-        "relatedSkills" : [write, comms, collab],
+        "relatedSkills" : [write, comms, create, collab],
         "relatedJobs" : [work.jobs.indie]
     },
     {
@@ -302,7 +302,7 @@ var duties = [
     },
     {
         "name" : "Oversee publicity strategy",
-        "relatedSkills" : [comms, lead],
+        "relatedSkills" : [comms, create, lead],
         "relatedJobs" : [work.jobs.uwp]
     },
     {
@@ -311,8 +311,8 @@ var duties = [
         "relatedJobs" : [work.jobs.uwp, work.jobs.indie]
     },
     {
-        "name" : "Create publicity materials",
-        "relatedSkills" : [write],
+        "name" : "Strategize & create publicity materials",
+        "relatedSkills" : [write, create, comms],
         "relatedJobs" : [work.jobs.uwp]
     },
         {
@@ -327,12 +327,12 @@ var duties = [
     },
     {
         "name" : "Write informative, engaging, and/or entertaining scripts",
-        "relatedSkills" : [write, video],
+        "relatedSkills" : [write, create, video],
         "relatedJobs" : [work.jobs.indie, work.jobs.dpi, work.jobs.wpt]
     },
     {
         "name" : "Establish lighthearted, enthusiastic tone in workgroup and on screen",
-        "relatedSkills" : [comms, lead],
+        "relatedSkills" : [comms, lead, create, perform],
         "relatedJobs" : [work.jobs.indie]
     },
     {
@@ -362,17 +362,17 @@ var duties = [
     },
     {
         "name" : "Arrange and conduct interviews with experts and other external sources",
-        "relatedSkills" : [video, collab],
+        "relatedSkills" : [video, collab, write],
         "relatedJobs" : [work.jobs.indie, work.jobs.dpi, work.jobs.wpt]
     },
     {
         "name" : "Arrange and conduct interviews with elected officials, legislators, and other external sources",
-        "relatedSkills" : [video, collab],
+        "relatedSkills" : [video, collab, write],
         "relatedJobs" : [work.jobs.wpr]
     },
     {
-        "name" : "Serve on talk radio show production team",
-        "relatedSkills" : [video, collab],
+        "name" : "Create and produce new talk radio show as part of team",
+        "relatedSkills" : [video, collab, create],
         "relatedJobs" : [work.jobs.wpr]
     },
     {
@@ -382,12 +382,12 @@ var duties = [
     },
         {
         "name" : "Instigate laughter: great, debilitating laughter",
-        "relatedSkills" : [perform, comms],
+        "relatedSkills" : [perform, comms, create],
         "relatedJobs" : [work.jobs.improv]
     },
     {
         "name" : "Engage live audiences",
-        "relatedSkills" : [comms, lead],
+        "relatedSkills" : [comms, lead, create, perform],
         "relatedJobs" : [work.jobs.improv]
     },
     {
@@ -417,7 +417,7 @@ var duties = [
     },
     {
         "name" : "Create dynamic, engaging websites",
-        "relatedSkills" : [web],
+        "relatedSkills" : [web, create],
         "relatedJobs" : [work.jobs.webdev]
     },
     {
@@ -520,27 +520,33 @@ bio.display = function(){
 function shrinkHeader() {
     var content = $('#page-content');
     var scrollStatus = content.scrollTop();
+    var headerHeight = Math.max(100, (150 - scrollStatus));
     var bioContainerWidth = Math.max((600 - scrollStatus), 400);
     var fontSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
     var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
     var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
-    var taglineSize = Math.max(1.15 - (0.008 * scrollStatus),0.15);
-    var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
-    var taglineOpacity = 1.0 - (0.02 * scrollStatus);
+    var welcomeMessageSize = Math.max(0.75 - (0.006 * scrollStatus),0.15);
+    var welcomeMessageOpacity = 1.0 - (0.02 * scrollStatus);
     var biopicWidth = Math.max(100, (150 - (50 * scrollStatus / 66)));
-    console.log(content + ' and ' + scrollStatus + ' and ' + bioContainerWidth);
+    var skillLineHeight = Math.max(34, (44 - (0.2 * scrollStatus)));
+    var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
+    console.log($('#show-hide-container').height());
 //    $('#header').css('height', bioContainerWidth);
 //    $('.bio-container').css('maxWidth' , bioContainerWidth + 'px');
 //    $('#page-content').css('paddingTop' , '(300 + ' + bioContainerWidth + ') px');
+    $('#header').css('height' , headerHeight + 'px');
     $('#name').css('fontSize' , fontSize + 'em');
     $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
-    $('.show-hide-button').css('fontSize' , (fontSize * 0.7) + 'em');
+    $('.skill').css('line-height' , skillLineHeight + 'px');
+    $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
     $('#name').css('marginTop' , nameTopMargin + 'px');
-    $('.welcome-message').css('fontSize' , taglineSize + 'em');
-    $('.welcome-message').css('opacity' , taglineOpacity);
+    $('.welcome-message').css('fontSize' , welcomeMessageSize + 'em');
+    $('.welcome-message').css('opacity' , welcomeMessageOpacity);
     $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
     $('.biopic').css('width' , biopicWidth + 'px');
+    var buttonHeight = $('.show-hide-button').height();
+    $('.show-hide-button').css('min-width' , (0.7 * buttonHeight) + 'px');
     console.log(backgroundOpacity);
     console.log($('#header').css('height'));
 }

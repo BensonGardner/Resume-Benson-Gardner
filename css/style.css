@@ -38,7 +38,7 @@ h3, ul {
 }
 
 #main {
-  padding-top: 300px;
+  padding-top: 150px;
   background-color: rgba(150, 151, 102, 0.6);
 }
 
@@ -186,11 +186,20 @@ a {
   font-style: italic;
   font-weight: 200;
   color: #f3f3f3;
-  line-height: 28px;
+  line-height: 23px;
 }
 
 .skills-container {
-  padding: 10px 0 0;
+  padding: 10px 0 10px 30px;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  display: flex;
+  webkit-justify-content; center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  min-width: 481px;
 }
 
 #show-hide-container {
@@ -199,12 +208,13 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   max-width: 100%;
-  clear: none;
 }
 
 .show-hide-button {
   text-align: center;
+  vertical-align: middle;
   padding: 4px;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -215,9 +225,10 @@ a {
   border-width: 2px;
   border-color: blue;
   background-color: rgba(251, 251, 209, 1.0);
-  min-width: 35px;
-  max-width: 35px;
+
   clear: none;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .skill {
@@ -225,7 +236,7 @@ a {
   color: #332166;
   border-style: solid;
   border-radius: 80px;
-  line-height: 50px;
+  line-height: 45px;
   border-width: 2px;
   border-color: blue;
   background-color: rgba(251, 251, 209, 1.0);
@@ -272,8 +283,8 @@ a {
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  flex-direction: row;
   flex-wrap: nowrap;
 }
 
@@ -299,7 +310,8 @@ ul {
   flex-wrap: nowrap;
   -webkit-flex-direction: row;
   flex-direction: row;
-  width: 100%;
+/*  width: 100%;*/
+  width: 684px;
 }
 
 .biopic {
@@ -314,6 +326,8 @@ ul {
   -webkit-flex-direction: column;
   flex-direction: column;
   margin-left: 10px;
+  min-width: 231px;
+  max-width: 285px;
 }
 
 .role {
