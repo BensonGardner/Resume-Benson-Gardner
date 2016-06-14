@@ -523,6 +523,7 @@ function shrinkHeader() {
     var headerHeight = Math.max(100, (150 - scrollStatus));
     var bioContainerWidth = Math.max((600 - scrollStatus), 400);
     var fontSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
+    var nameMessageWidth = 231 - (20 * scrollStatus);
     var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
     var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
     var welcomeMessageSize = Math.max(0.75 - (0.006 * scrollStatus),0.15);
@@ -535,12 +536,12 @@ function shrinkHeader() {
 //    $('.bio-container').css('maxWidth' , bioContainerWidth + 'px');
 //    $('#page-content').css('paddingTop' , '(300 + ' + bioContainerWidth + ') px');
     $('#header').css('height' , headerHeight + 'px');
+    $('.name-message-container').css('min-width' , nameMessageWidth+ 'px');
     $('#name').css('fontSize' , fontSize + 'em');
     $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
     $('.skill').css('line-height' , skillLineHeight + 'px');
     $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
-    $('#name').css('marginTop' , nameTopMargin + 'px');
     $('.welcome-message').css('fontSize' , welcomeMessageSize + 'em');
     $('.welcome-message').css('opacity' , welcomeMessageOpacity);
     $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');

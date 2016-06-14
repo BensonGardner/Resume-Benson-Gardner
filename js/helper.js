@@ -20,7 +20,7 @@ var HTMLskills = '<li data-skill="%data%"><span class="skill"><a href="javascrip
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<span class="work">%data% - ';
 var HTMLworkTitle = '%data%</a></span>';
-var HTMLworkYears = '<div class="date-text"><br>%data%</div>';
+var HTMLworkYears = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
