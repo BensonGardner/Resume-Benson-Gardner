@@ -445,6 +445,10 @@ var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+formattedEmail = formattedEmail.replace("%data%", bio.contacts.email);
+formattedTwitter = formattedTwitter.replace("%data%", bio.contacts.twitter);
+formattedGitHub = formattedGitHub.replace("%data%", bio.contacts.github);
+formattedLinkedin = formattedLinkedin.replace("%data%", bio.contacts.linkedin);
 
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
 
@@ -517,32 +521,45 @@ bio.display = function(){
     }
 };
 
+//console.log(nameMessageMaxWidth);
+
 function shrinkHeader() {
     var content = $('#page-content');
     var scrollStatus = content.scrollTop();
+//set various features of header to vary depending on how far the page is scrolled
     var headerHeight = Math.max(100, (150 - scrollStatus));
     var bioContainerWidth = Math.max((600 - scrollStatus), 400);
-    var fontSize = Math.max(1.5,(2.05 - (0.009 * scrollStatus)));
-    var nameMessageWidth = 231 - (20 * scrollStatus);
+    var fontSize = Math.max(1.5,(2.00 - (0.009 * scrollStatus)));
     var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
     var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
-    var welcomeMessageSize = Math.max(0.75 - (0.006 * scrollStatus),0.15);
     var welcomeMessageOpacity = 1.0 - (0.02 * scrollStatus);
-    var biopicWidth = Math.max(100, (150 - (50 * scrollStatus / 66)));
+    var biopicWidth = Math.max(100, (150 - scrollStatus));
     var skillLineHeight = Math.max(34, (44 - (0.2 * scrollStatus)));
     var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
-    console.log($('#show-hide-container').height());
+//make welcome message font size also vary according to width of name-message-container
+//    nameMessageMinWidth = Math.min(50 , (150 - (20 * scrollStatus)));
+//maybe this isn't working. how does it know i mean pixels arter all
+ //   var welcomeMessageSizePartOne = Math.min(0.75 - (0.006 * scrollStatus), (nameMessageMinWidth / 192) * welcomeMessageSizeCoeff);
+ //   var welcomeMessageSizeCoeff = Math.pow((nameMessageMaxWidth / 192), 2);
+//    var welcomeMessageSizeMax = Math.min((0.85 - (0.006 * scrollStatus)), (welcomeMessageSizeCoeff));
+//    var setMaxFontSize = Math.min((nameMessageMinWidth * .0039), 0.75);
+//    var welcomeMessageSize = Math.max(welcomeMessageSizeMax, (0.15 * (0.75 - 0.006 * scrollStatus)));
+//    var nameMessageMaxWidth = $('.name-message-container').width();
+  //  var welcomeMessageSize = Math.min(0.75, 0.75 * (nameMessageMaxWidth/192));
+
+//    console.log(nameMessageMaxWidth + " & " + (0.85 - (0.006 * scrollStatus)) + " & " + welcomeMessageSizeMax + " & " + welcomeMessageSizeCoeff);
+//    console.log($('#show-hide-container').height());
 //    $('#header').css('height', bioContainerWidth);
 //    $('.bio-container').css('maxWidth' , bioContainerWidth + 'px');
 //    $('#page-content').css('paddingTop' , '(300 + ' + bioContainerWidth + ') px');
     $('#header').css('height' , headerHeight + 'px');
-    $('.name-message-container').css('min-width' , nameMessageWidth+ 'px');
+ //   $('.name-message-container').css('max-width' , nameMessageMaxWidth + 'px');
     $('#name').css('fontSize' , fontSize + 'em');
-    $('.skill').css('fontSize' , (fontSize * 0.5) + 'em');
+    $('.skill').css('fontSize' , (fontSize * 0.45) + 'em');
     $('.skill').css('line-height' , skillLineHeight + 'px');
     $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
-    $('.welcome-message').css('fontSize' , welcomeMessageSize + 'em');
+ //   $('.welcome-message').css('fontSize' , welcomeMessageSize + 'em');
     $('.welcome-message').css('opacity' , welcomeMessageOpacity);
     $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
     $('.biopic').css('width' , biopicWidth + 'px');
@@ -570,7 +587,7 @@ work.display = function(){
       if (Boolean(work.jobs[key].employer) === true) {
         $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
       } else {
-          $('.work-entry:last').append('<a href="#">' + HTMLworkTitle.replace('%data%' , work.jobs[key].position));
+          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].position));
       }
       $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
           //add all related job duties to the work-entry -- instead of a description.
@@ -587,14 +604,15 @@ work.display = function(){
 
 projects.display = function() {
     for (projectIndex = 0; projectIndex < projects.projectEntries.length; projectIndex++) {
-      $('#projects').append(HTMLprojectStart);
-      var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projectEntries[projectIndex].name);
-      formattedProjectName = formattedProjectName.replace('#' , projects.projectEntries[projectIndex].link);
-      var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projectEntries[projectIndex].image);
-      formattedProjectImage = formattedProjectImage.replace('#' , projects.projectEntries[projectIndex].link);
-      var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projectEntries[projectIndex].challenge);
-      var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projectEntries[projectIndex].role);
-      $('.project-entry:last').append(formattedProjectImage + formattedProjectName + formattedProjectRole + formattedProjectChallenge);
+        $('#projects').append(HTMLprojectStart);
+        var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projectEntries[projectIndex].name);
+        formattedProjectName = formattedProjectName.replace('#' , projects.projectEntries[projectIndex].link);
+        var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projectEntries[projectIndex].image);
+        formattedProjectImage = formattedProjectImage.replace('#' , projects.projectEntries[projectIndex].link);
+        var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projectEntries[projectIndex].challenge);
+        var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projectEntries[projectIndex].role);
+        $('.project-entry:last').append(formattedProjectName + formattedProjectRole + formattedProjectChallenge + formattedProjectImage);
+//        $('.project-entry:last').prepend(formattedProjectImage);
     }
 };
 
@@ -605,7 +623,7 @@ education.display = function (){
       if (education.schools[schoolsIndex].degree !== undefined) {
         var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
       } else {
-        var formattedSchoolDegree = "</a>";
+        var formattedSchoolDegree = "</a></span>";
       }
       var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
       var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
@@ -615,7 +633,8 @@ education.display = function (){
         var formattedSchoolMajor = "";
       }
       var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
-      $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolNotable);
+      $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation +
+        formattedSchoolMajor + formattedSchoolNotable);
     }
     $('#education').append(HTMLonlineClasses);
     for (onlinecourseIndex = 0; onlinecourseIndex < education.onlineCourses.length; onlinecourseIndex++) {

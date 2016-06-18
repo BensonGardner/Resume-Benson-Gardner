@@ -7,7 +7,7 @@ html {
 body {
   margin:0;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   clear:both;
 }
 
@@ -22,8 +22,23 @@ h6 {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+h1 {
   font-weight: 300;
-  clear:both;
+}
+
+div,
+li,
+p,
+h2,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
 }
 
 h3, ul {
@@ -37,28 +52,40 @@ h3, ul {
   position: relative;
 }
 
-svg path {
+/* svg path {
     fill: rgb(150, 130, 209);
-}
+}*/
 
 #main {
   padding-top: 150px;
 /*  background-color: rgba(51, 32, 102, 0.6); */
-  background-color: rgba(150, 140, 102, 0.65);
+  background-color: rgba(150, 140, 102, 0.77);
 }
 
-.education-entry,
-.work-entry,
-.project-entry {
+.work-entry {
   padding: 0 5%;
+  margin-bottom: 15px;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  color: rgb(251, 251, 255);
+  font-weight: 200;
 }
 
-.work {
-  color: rgb(251, 251, 209);
-  font-weight: 300;
+.education-entry,
+.project-entry {
+  padding: 0 5%;
+  color: rgb(251, 251, 255);
+  font-weight: 200;
+}
+
+.project-entry {
+  -webkit-display: flex;
+  display: flex;
+}
+
+.project-heading {
+  padding: 0;
 }
 
 .duty-wrapper {
@@ -86,6 +113,7 @@ svg path {
   width: auto;
   background-color: rgba(251, 251, 209, 1.0);
   color: #332066;
+  font-weight: 300;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -118,57 +146,40 @@ svg path {
 h1 {
   font-size: 40px;
   color: rgba(255, 255, 158, 1.0);
-  padding-top: 18px;
   display: block;
 }
 
 h2 {
-  font-weight: bold;
   font-size: 24px;
-  color: #332066;
+  color: rgb(255, 255, 158);
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-weight: 500;
   padding: 0 5%;
   font-size: 14px;
   display: inline-block;
   margin-top: 10px;
-  color: #000;
+  color: rgb(255, 255, 158);
   font-style: italic;
-}
-
-h4 {
-  font-weight: 500;
-  font-size: 14px;
-  display: inline-block;
-  margin-top: 10px;
-  color: #000;
-  font-style: italic;
-}
-
-h2, {
-  padding: 10px 5%;
 }
 
 .date-text {
   font-style: italic;
-  font-weight: 300;
-  font-size: 14px;
-  color: rgba(251, 251, 209, 1.0);
+  font-weight: 200;
+  font-size: 12px;
+  color: rgba(251, 251, 255, 1.0);
   line-height: 16px;
-  float: left;
   display: flex;
   width: 100%;
 }
 
 .location-text {
   font-style: italic;
-  font-weight: 300;
-  font-size: 14px;
-  color: rgba(251, 251, 209, 1.0);
+  font-weight: 200;
+  font-size: 12px;
+  color: rgba(251, 251, 255, 1.0);
   line-height: 16px;
   float: right;
   width: 100%;
@@ -176,27 +187,33 @@ h2, {
 
 p {
   font-size: 14px;
-  color: #332066;
+  color: rgb(251, 251, 255);
   line-height: 21px;
-  width: 100%;
+  font-weight: 200;
 }
 
 a {
-  color: rgb(51, 32, 135);
-  text-decoration: none;
+  color: rgb(251, 251, 255);
+ /* rgb was 251, 251, 209*/
+  text-decoration: underline;
   margin-top: 10px;
   width: 100%;
 }
 
 .welcome-message {
+  display: block;
+  overflow: hidden;
   font-style: italic;
   font-weight: 200;
   color: rgba(251, 251, 209, 1.0);
   line-height: 23px;
+  -webkit-transition: visibility 0.2s;
+  transition: visibility 0.2s;
+  font-size: 0.75em;
 }
 
 .skills-container {
-  padding: 10px 0 10px 30px;
+  padding: 10px 0 10px 20px;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   display: flex;
@@ -206,6 +223,13 @@ a {
   align-items: center;
   -webkit-align-items: center;
   min-width: 481px;
+}
+
+.skills-container a:link, .skills-container a:visited {
+  color: rgb(51, 32, 135);
+  text-decoration: none;
+  width: auto;
+  margin: auto;
 }
 
 #show-hide-container {
@@ -240,6 +264,7 @@ a {
 .skill {
   font-weight: 400;
   padding: 5px;
+  margin: 0 3px;
   color: #332166;
   border-style: hidden;
   border-radius: 80px;
@@ -253,23 +278,21 @@ a {
   background-color: rgba(255, 255, 158, 1.0);
 }
 
-/* NOT USING
-#skills-h3 {
-  color: rgba(251, 251, 247, 1.0);
-  display: none;
-}*/
 
-.orange {
-  background-color: #ff9;
+.connect {
+  background-color: #332066;
+  color: rgb(251,251,158);
+  text-align: center;
 }
 
-.orange-text {
+.contact-text {
   color: rgba(255, 255, 158, 1.0);
+  margin-right: 0.63em;
 }
 
 .white-text {
   font-weight: 400;
-  color: rgba(251, 251, 209, 1.0);
+  color: rgba(255, 255, 158, 1.0);
 }
 
 .entries {
@@ -325,6 +348,8 @@ ul {
   height: 100%;
   float: left;
   margin: 0;
+  clip:rect(0px,25,0,25px);
+
 }
 
 .name-message-container {
@@ -332,9 +357,11 @@ ul {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
+  flex-wrap: wrap;
   margin-left: 10px;
-  min-width: 231px;
-  max-width: 285px;
+  max-width: 226  px;
+  padding: 9px 0;
 }
 
 .role {
@@ -345,36 +372,9 @@ ul {
   padding: 10px;
 }
 
-
-#lets-connect {
-  text-align: center;
-}
-
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
-}
 
-@media only screen and (max-width:900px) {
-
-}
-
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-
-  .welcome-message {
-    display: none;
-  }
-
-/*  .bio-container {
-    max-width: 250px;
-  }*/
-}
 
 #map {
   display: block;
@@ -388,8 +388,21 @@ ul {
   padding-bottom: 5%;
 }
 
+@media only screen and (min-width: 500px) {
+  .project-entry img {
+  padding: 10px;
+  float:right;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .h1 {
+    font-size: 2.0em;
   }
 }
