@@ -30,7 +30,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<div class="project-container"><span><a href="#">%data%</a></span>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectRole = '<br><h3 class="project-heading">My Role</h3><p> %data%</p>';
-var HTMLprojectChallenge = '<br><h3 class="project-heading">The Challenge</h3><p> %data%</p><br></div>';
+var HTMLprojectChallenge = '<h3 class="project-heading">The Challenge</h3><p>%data%</p></div>';
 var HTMLprojectImage = '<a href = "#"><img width="150px"; src="%data%"></a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
@@ -39,7 +39,7 @@ var HTMLschoolDegree = ' -- %data%</a></span>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div><p>';
 var HTMLschoolMajor = 'Major: %data%. ';
-var HTMLschoolNotable = '%data%.</p><br>';
+var HTMLschoolNotable = '%data%.</p>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
@@ -47,7 +47,6 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 /*

@@ -526,6 +526,7 @@ bio.display = function(){
 function shrinkHeader() {
     var content = $('#page-content');
     var scrollStatus = content.scrollTop();
+//WHAT WE NEED is to do an if statement within the function - only do this if the screen width is belwo whatever it was.
 //set various features of header to vary depending on how far the page is scrolled
     var headerHeight = Math.max(100, (150 - scrollStatus));
     var bioContainerWidth = Math.max((600 - scrollStatus), 400);
@@ -555,7 +556,7 @@ function shrinkHeader() {
     $('#header').css('height' , headerHeight + 'px');
  //   $('.name-message-container').css('max-width' , nameMessageMaxWidth + 'px');
     $('#name').css('fontSize' , fontSize + 'em');
-    $('.skill').css('fontSize' , (fontSize * 0.45) + 'em');
+    $('.skill').css('fontSize' , (fontSize * 0.40) + 'em');
     $('.skill').css('line-height' , skillLineHeight + 'px');
     $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
     $('#name').css('marginBottom' , nameBottomMargin + 'px');
@@ -565,8 +566,6 @@ function shrinkHeader() {
     $('.biopic').css('width' , biopicWidth + 'px');
     var buttonHeight = $('.show-hide-button').height();
     $('.show-hide-button').css('min-width' , (0.7 * buttonHeight) + 'px');
-    console.log(backgroundOpacity);
-    console.log($('#header').css('height'));
 }
 
 var currentJob;
@@ -617,20 +616,22 @@ projects.display = function() {
 };
 
 education.display = function (){
+    var formattedSchoolDegree;
+    var formattedSchoolMajor;
     for (schoolsIndex = 0; schoolsIndex < education.schools.length; schoolsIndex++) {
       $('#education').append(HTMLschoolStart);
       var formattedSchoolName = HTMLschoolName.replace('%data%' , education.schools[schoolsIndex].name);
       if (education.schools[schoolsIndex].degree !== undefined) {
-        var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
+        formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
       } else {
-        var formattedSchoolDegree = "</a></span>";
+        formattedSchoolDegree = "</a></span>";
       }
       var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
       var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
        if (education.schools[schoolsIndex].major !== undefined) {
-        var formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].major);
+        formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].major);
       } else {
-        var formattedSchoolMajor = "";
+        formattedSchoolMajor = "";
       }
       var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
       $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation +

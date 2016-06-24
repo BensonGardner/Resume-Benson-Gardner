@@ -3,7 +3,6 @@ html {
   background-size: cover;
 }
 
-
 body {
   margin:0;
   font-family: "Roboto", sans-serif;
@@ -52,13 +51,9 @@ h3, ul {
   position: relative;
 }
 
-/* svg path {
-    fill: rgb(150, 130, 209);
-}*/
-
 #main {
+  position: relative;
   padding-top: 150px;
-/*  background-color: rgba(51, 32, 102, 0.6); */
   background-color: rgba(150, 140, 102, 0.77);
 }
 
@@ -77,15 +72,22 @@ h3, ul {
   padding: 0 5%;
   color: rgb(251, 251, 255);
   font-weight: 200;
+  margin-bottom: 15px;
 }
 
 .project-entry {
   -webkit-display: flex;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
+  max-width: 575px;
 }
 
 .project-heading {
   padding: 0;
+  margin-top: 10px;
 }
 
 .duty-wrapper {
@@ -134,14 +136,9 @@ h3, ul {
   max-height: 0;
   width: auto;
   font-size: 0;
-  margin 0;
-  padding 0;
+  margin: 0;
+  padding: 0;
 }
-
-/*.filtered-out {
-  font-size: 6px;
-  background-color: red;
-}*/
 
 h1 {
   font-size: 40px;
@@ -160,7 +157,6 @@ h3 {
   padding: 0 5%;
   font-size: 14px;
   display: inline-block;
-  margin-top: 10px;
   color: rgb(255, 255, 158);
   font-style: italic;
 }
@@ -194,10 +190,8 @@ p {
 
 a {
   color: rgb(251, 251, 255);
- /* rgb was 251, 251, 209*/
   text-decoration: underline;
   margin-top: 10px;
-  width: 100%;
 }
 
 .welcome-message {
@@ -217,7 +211,7 @@ a {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   display: flex;
-  webkit-justify-content; center;
+  webkit-justify-content:; center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -253,9 +247,7 @@ a {
   border-style: hidden;
   border-radius: 80px;
   border-width: 2px;
- /* border-color: rgb(255, 255, 158);*/
   background-color: rgba(251, 251, 209, 1.0);
-
   clear: none;
   max-height: 100%;
   max-width: 100%;
@@ -270,7 +262,6 @@ a {
   border-radius: 80px;
   line-height: 45px;
   border-width: 2px;
-/*  border-color: rgb(255, 255, 158);*/
   background-color: rgba(251, 251, 209, 1.0);
 }
 
@@ -314,8 +305,11 @@ a {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: nowrap;
   flex-direction: row;
   flex-wrap: nowrap;
+  height: auto;
 }
 
 .flex-box {
@@ -324,6 +318,9 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-around;
   padding: 10px;
 }
 
@@ -331,23 +328,25 @@ ul {
   list-style-type: none;
 }
 
+.flex-item {
+  width: auto;
+  display: flex;
+}
 
 .bio-container {
-  position: relative;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: nowrap;
   -webkit-flex-direction: row;
   flex-direction: row;
-/*  width: 100%;*/
   width: 684px;
 }
 
 .biopic {
   height: 100%;
   float: left;
-  margin: 0;
+  margin: 0 10px 0 0;
   clip:rect(0px,25,0,25px);
 
 }
@@ -358,9 +357,10 @@ ul {
   -webkit-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-left: 10px;
-  max-width: 226  px;
+  margin: 0;
+  max-width: 226px;
   padding: 9px 0;
 }
 
@@ -372,9 +372,9 @@ ul {
   padding: 10px;
 }
 
-/* Media queries to handle various device widths */
-
-
+.project-container {
+  min-width: 115px;
+}
 
 #map {
   display: block;
@@ -388,11 +388,12 @@ ul {
   padding-bottom: 5%;
 }
 
+
+/* Media queries to handle various device widths */
+
+
 @media only screen and (min-width: 500px) {
-  .project-entry img {
-  padding: 10px;
-  float:right;
-  }
+
 }
 
 @media only screen and (min-width: 750px) {
@@ -401,8 +402,41 @@ ul {
   }
 }
 
+@media only screen and (max-width: 795px) {
+  .skill {
+    font-size: 0.65em;
+  }
+
+  #header {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(51, 32, 102, 0.83);
+  }
+
+  .bio-container {
+    width: 100%;
+    height: 150px;
+    display: block;
+    background-color: rgba(51, 32, 102, 0.83);
+  }
+
+  .skills-container {
+    min-width: 100px;
+    display: block;
+    background-color: rgba(51, 32, 102, 0.83);
+  }
+
+  #main {
+    padding-top: 0px;
+    min-width: 320px;
+  }
+
+}
+
 @media only screen and (max-width: 998px) {
   .h1 {
     font-size: 2.0em;
   }
 }
+
