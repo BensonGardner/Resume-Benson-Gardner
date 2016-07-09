@@ -365,7 +365,7 @@ ul {
 
 #map {
   display: block;
-  height: 100%;
+  height: 90%;
   margin: 0 5%;
 }
 
@@ -374,7 +374,6 @@ ul {
   width: 100%;
   padding-bottom: 5%;
 }
-
 
 /* Media query functionality is replaced with javascript in shrinkHeader function
 which works when window is resized.*/
