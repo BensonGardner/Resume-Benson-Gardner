@@ -2,13 +2,13 @@ var HTMLheaderName = '<div class="name-message-container"><h1 id="name">%data%</
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="contact-text">%contact%</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="contact-text">mobile</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
-var HTMLemail = '<li class="flex-item"><span class="contact-text">email</span><span class="white-text"><a href="mailto:%data%">%data%</a></span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="contact-text">twitter</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
-var HTMLlinkedin = '<li class="flex-item"><span class="contact-text">linkedin</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="contact-text">github</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="contact-text">%data%</a></span><br></li>';
+var HTMLemail = '<li class="flex-item"><span class="contact-text"><a href="mailto:%data%">email</a></span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="contact-text"><a href="%data%">twitter</a></span></li>';
+var HTMLlinkedin = '<li class="flex-item"><span class="contact-text"><a href="%data%">linkedin</a></span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="contact-text"><a href="%data%">github</a></span></li>';
 var HTMLblog = '<li class="flex-item"><span class="contact-text">blog</span><span class="white-text"><a href="%data%">%data%</a></span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="contact-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><br><span class="contact-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic" alt="Benson Gardner logo">';
 var HTMLwelcomeMsg = '<div class="welcome-message">%data%</div></div>';

@@ -142,16 +142,16 @@ var projects = {
         {
             "name" : "Online Portfolio",
             "image" : "images/bg-logo.svg",
-            "link" : "placeholder",
+            "link" : "https://github.com/BensonGardner/portfolio",
             "challenge" : "Create a responsive, engaging site to display my work",
             "role" : "Developer",
             "position" : "Front-End Developer"
         },
         {
             "name" : "Historical Markers",
-            "image" : "placeholder",
-            "link" : "placeholder",
-            "client" : "",
+            "image" : "images/markersgroup-560.jpg",
+            "link" : "https://www.cityofmadison.com/planning/pdf/markersgroup.pdf",
+            "client" : "City of Madison Sesquicentennial Commission",
             "challenge" : "Research, write, and choose images for 12 engaging signs about periods of Madison history chosen by the city's Sesquicentennial Commission",
             "role" : "Writer / Photo Researcher",
             "position" : "Independent Media Producer"
@@ -439,23 +439,15 @@ var duties = [
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+var formattedPhone = HTMLmobile.replace("%data%" , bio.contacts.mobile);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-formattedEmail = formattedEmail.replace("%data%", bio.contacts.email);
-formattedTwitter = formattedTwitter.replace("%data%", bio.contacts.twitter);
-formattedGitHub = formattedGitHub.replace("%data%", bio.contacts.github);
-formattedLinkedin = formattedLinkedin.replace("%data%", bio.contacts.linkedin);
-
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
 
-// Need to fix the collapse all ---- actually I think this has to be changed completely
-//to something like "hide all" to make the duties completely disappear. or acutally
-//then it has to be a Show Job Duties / Hide Job Duties  button.
-
+/* Create function that allows filtering of duties using the skills */
 function filterDuties(event) {
     $('.duty-wrapper').removeClass('hidden');
     $('.duty-wrapper').children().removeClass('hidden');
@@ -476,6 +468,7 @@ function filterDuties(event) {
     }
 }
 
+/* Create a show/hide button */
 function showHide() {
     $('.filtering').removeClass('filtering');
     var clickedButton = $(this);
@@ -485,8 +478,6 @@ function showHide() {
         $('.duty-wrapper').children().addClass('hidden');
         $('.show-hide-button').removeClass('showing');
         $('.show-hide-button a').text('+');
-//        $('.duty-wrapper').removeClass('filtered-in');
-//        $('.duty-wrapper').children().removeClass('filtered-in');
     } else {
         $('.duty-wrapper').removeClass('hidden');
         $('.duty-wrapper').children().removeClass('hidden');
@@ -498,7 +489,6 @@ function showHide() {
 }
 
 bio.display = function(){
-    /*$("#header").prepend(formattedRole);*/
     $('.bio-container').prepend(HTMLheaderName.replace('%data%', bio.name));
     $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.message));
     $('.bio-container').prepend(formattedBioPic);
@@ -506,6 +496,7 @@ bio.display = function(){
     $('#footerContacts').append(formattedLinkedin);
     $('#footerContacts').append(formattedGitHub);
     $('#footerContacts').append(formattedTwitter);
+    $('#footerContacts').append(formattedPhone);
     $('#footerContacts').append(formattedLocation);
     $('.skills-container').append(HTMLshowHideButton);
     $('.show-hide-button').click(showHide);
@@ -521,51 +512,73 @@ bio.display = function(){
     }
 };
 
-//console.log(nameMessageMaxWidth);
-
+/* Define function that creates a shrinking sticky header, but not at small screen widths or when window is resized small. Function also
+adjusts font sizes in header */
 function shrinkHeader() {
-    var content = $('#page-content');
-    var scrollStatus = content.scrollTop();
-//WHAT WE NEED is to do an if statement within the function - only do this if the screen width is belwo whatever it was.
-//set various features of header to vary depending on how far the page is scrolled
-    var headerHeight = Math.max(100, (150 - scrollStatus));
-    var bioContainerWidth = Math.max((600 - scrollStatus), 400);
-    var fontSize = Math.max(1.5,(2.00 - (0.009 * scrollStatus)));
-    var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
-    var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
-    var welcomeMessageOpacity = 1.0 - (0.02 * scrollStatus);
-    var biopicWidth = Math.max(100, (150 - scrollStatus));
-    var skillLineHeight = Math.max(34, (44 - (0.2 * scrollStatus)));
-    var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
-//make welcome message font size also vary according to width of name-message-container
-//    nameMessageMinWidth = Math.min(50 , (150 - (20 * scrollStatus)));
-//maybe this isn't working. how does it know i mean pixels arter all
- //   var welcomeMessageSizePartOne = Math.min(0.75 - (0.006 * scrollStatus), (nameMessageMinWidth / 192) * welcomeMessageSizeCoeff);
- //   var welcomeMessageSizeCoeff = Math.pow((nameMessageMaxWidth / 192), 2);
-//    var welcomeMessageSizeMax = Math.min((0.85 - (0.006 * scrollStatus)), (welcomeMessageSizeCoeff));
-//    var setMaxFontSize = Math.min((nameMessageMinWidth * .0039), 0.75);
-//    var welcomeMessageSize = Math.max(welcomeMessageSizeMax, (0.15 * (0.75 - 0.006 * scrollStatus)));
-//    var nameMessageMaxWidth = $('.name-message-container').width();
-  //  var welcomeMessageSize = Math.min(0.75, 0.75 * (nameMessageMaxWidth/192));
-
-//    console.log(nameMessageMaxWidth + " & " + (0.85 - (0.006 * scrollStatus)) + " & " + welcomeMessageSizeMax + " & " + welcomeMessageSizeCoeff);
-//    console.log($('#show-hide-container').height());
-//    $('#header').css('height', bioContainerWidth);
-//    $('.bio-container').css('maxWidth' , bioContainerWidth + 'px');
-//    $('#page-content').css('paddingTop' , '(300 + ' + bioContainerWidth + ') px');
-    $('#header').css('height' , headerHeight + 'px');
- //   $('.name-message-container').css('max-width' , nameMessageMaxWidth + 'px');
-    $('#name').css('fontSize' , fontSize + 'em');
-    $('.skill').css('fontSize' , (fontSize * 0.40) + 'em');
-    $('.skill').css('line-height' , skillLineHeight + 'px');
-    $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
-    $('#name').css('marginBottom' , nameBottomMargin + 'px');
- //   $('.welcome-message').css('fontSize' , welcomeMessageSize + 'em');
-    $('.welcome-message').css('opacity' , welcomeMessageOpacity);
-    $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
-    $('.biopic').css('width' , biopicWidth + 'px');
-    var buttonHeight = $('.show-hide-button').height();
-    $('.show-hide-button').css('min-width' , (0.7 * buttonHeight) + 'px');
+    if ($(window).width() > 796) {
+        var content = $('#page-content');
+        var scrollStatus = content.scrollTop();
+        var headerHeight = Math.max(100, (150 - scrollStatus));
+        var bioContainerWidth = Math.max((600 - scrollStatus), 400);
+        var fontSize = Math.max(1.5,(2.00 - (0.009 * scrollStatus)));
+        var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
+        var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
+        var welcomeMessageOpacity = 1.0 - (0.02 * scrollStatus);
+        var biopicWidth = Math.max(100, (150 - scrollStatus));
+        var skillLineHeight = Math.max(34, (44 - (0.2 * scrollStatus)));
+        var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
+        $('#header').css('height' , headerHeight + 'px');
+        $('#header').css('background-color' , 'rgba(51, 32, 102, ' + backgroundOpacity + ')');
+        $('#header').css('position' , 'fixed');
+        $('#header').css('-webkit-flex-direction' , 'row');
+        $('#header').css('flex-direction' , 'row');
+        $('.bio-container').css('display' , 'flex');
+        $('.bio-container').css('flex-wrap' , 'nowrap');
+        $('.bio-container').css('-webkit-flex-direction' , 'row');
+        $('.bio-container').css('flex-direction' , 'row');
+        $('.bio-container').css('width' , '684px');
+        $('.bio-container').css('height' , 'auto');
+        $('.biopic').css('width' , biopicWidth + 'px');
+        $('#name').css('fontSize' , fontSize + 'em');
+        $('#name').css('marginBottom' , nameBottomMargin + 'px');
+        $('.welcome-message').css('opacity' , welcomeMessageOpacity);
+        $('.skills-container').css('display' , '-webkit-flex');
+        $('.skills-container').css('display' , 'flex');
+        $('.skills-container').css('-webkit-flex-direction' , 'row');
+        $('.skills-container').css('-webkit-justify-content' , 'center');
+        $('.skills-container').css('flex-direction' , 'row');
+        $('.skills-container').css('justify-content' , 'center');
+        $('.skills-container').css('align-items' , 'center');
+        $('.skills-container').css('-webkit-align-items' , 'center');
+        $('.skills-container').css('min-width' , '481px');
+        $('.skill').css('fontSize' , (fontSize * 0.40) + 'em');
+        $('.skill').css('line-height' , skillLineHeight + 'px');
+        var buttonHeight = $('.show-hide-button').height();
+        $('.show-hide-button').css('fontSize' , (fontSize * 0.9) + 'em');
+        $('.show-hide-button').css('min-width' , (0.7 * buttonHeight) + 'px');
+        $('#main').css('padding-top' , '150px');
+        $('#main').css('min-width' , 'auto');
+    } else {
+        $('#header').css('-webkit-flex-direction' , 'column');
+        $('#header').css('flex-direction' , 'column');
+        $('#header').css('position' , 'relative');
+        $('#header').css('background-color' , 'rgba(51, 32, 102, 0.83)');
+        $('#header').css('height' , 'auto');
+        $('.bio-container').css('width' , '100%');
+        $('.bio-container').css('height' , '150px');
+        $('.bio-container').css('display' , 'block');
+        $('.bio-container').css('background-color' , 'rgba(51, 32, 102, 0.83)');
+        $('#name').css('fontSize' , fontSize + 'em');
+        $('.skills-container').css('min-width' , '100px');
+        $('.skills-container').css('display' , 'block');
+        $('.skills-container').css('background-color' , 'rgba(51, 32, 102, 0.83)');
+        $('.skill').css('font-size' , '0.65em');
+        $('#main').css('padding-top' , '0px');
+        $('#main').css('min-width' , '320px');
+    }
+    if ($(window).width() > 347) {
+        $('h1').css('font-size' , '32px');
+    }
 }
 
 var currentJob;
@@ -582,14 +595,14 @@ work.display = function(){
         currentJob = work.jobs[key];
         $('#workExperience').append(HTMLworkStart);
       }
-        // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
+// Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
       if (Boolean(work.jobs[key].employer) === true) {
         $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
       } else {
           $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].position));
       }
       $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
-          //add all related job duties to the work-entry -- instead of a description.
+// Add all related job duties to the work-entry -- instead of a description.
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
            var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
@@ -611,7 +624,6 @@ projects.display = function() {
         var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projectEntries[projectIndex].challenge);
         var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projectEntries[projectIndex].role);
         $('.project-entry:last').append(formattedProjectName + formattedProjectRole + formattedProjectChallenge + formattedProjectImage);
-//        $('.project-entry:last').prepend(formattedProjectImage);
     }
 };
 
