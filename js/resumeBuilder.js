@@ -446,58 +446,57 @@ var duties = [
     }
 ];
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
-var formattedPhone = HTMLmobile.replace("%data%" , bio.contacts.mobile);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-
-/* Create function that allows filtering of duties using the skills */
-function filterDuties(event) {
-    $('.duty-wrapper').removeClass('hidden');
-    $('.duty-wrapper').children().removeClass('hidden');
-    $('.show-hide-button').addClass('showing');
-    $('.show-hide-button a').text('-');
-    var clickedButton = $(this).children();
-    if (clickedButton.hasClass('filtering')) {
-        $('.filtering').removeClass('filtering');
-        $('.filtered-in').removeClass('filtered-in');
-    } else {
-        $('.filtering').removeClass('filtering');
-        $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
-        $('[data-related-skills*="' + event.data.skillToFilter + '"]').children().addClass('filtered-in');
-        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
-        $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').children().removeClass('filtered-in');
-        $('.emphasis.filtered-in').removeClass('filtered-in');
-        $(this).children().addClass('filtering');
-    }
-}
-
-/* Create a show/hide button */
-function showHide() {
-    $('.filtering').removeClass('filtering');
-    var clickedButton = $(this);
-    console.log(clickedButton);
-    if (clickedButton.hasClass('showing')) {
-        $('.duty-wrapper').addClass('hidden');
-        $('.duty-wrapper').children().addClass('hidden');
-        $('.show-hide-button').removeClass('showing');
-        $('.show-hide-button a').text('+');
-    } else {
+bio.display = function(){
+    /* Create function that allows filtering of duties using the skills */
+    function filterDuties(event) {
         $('.duty-wrapper').removeClass('hidden');
         $('.duty-wrapper').children().removeClass('hidden');
-        $('.duty-wrapper').addClass('filtered-in');
-        $('.duty-wrapper').children().addClass('filtered-in');
         $('.show-hide-button').addClass('showing');
         $('.show-hide-button a').text('-');
+        var clickedButton = $(this).children();
+        if (clickedButton.hasClass('filtering')) {
+            $('.filtering').removeClass('filtering');
+            $('.filtered-in').removeClass('filtered-in');
+        } else {
+            $('.filtering').removeClass('filtering');
+            $('[data-related-skills*="' + event.data.skillToFilter + '"]').addClass('filtered-in');
+            $('[data-related-skills*="' + event.data.skillToFilter + '"]').children().addClass('filtered-in');
+            $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').removeClass('filtered-in');
+            $('[data-related-skills]').not('[data-related-skills*="' + event.data.skillToFilter + '"]').children().removeClass('filtered-in');
+            $('.emphasis.filtered-in').removeClass('filtered-in');
+            $(this).children().addClass('filtering');
+        }
     }
-}
 
-bio.display = function(){
+    /* Create a show/hide button */
+    function showHide() {
+        $('.filtering').removeClass('filtering');
+        var clickedButton = $(this);
+        console.log(clickedButton);
+        if (clickedButton.hasClass('showing')) {
+            $('.duty-wrapper').addClass('hidden');
+            $('.duty-wrapper').children().addClass('hidden');
+            $('.show-hide-button').removeClass('showing');
+            $('.show-hide-button a').text('+');
+        } else {
+            $('.duty-wrapper').removeClass('hidden');
+            $('.duty-wrapper').children().removeClass('hidden');
+            $('.duty-wrapper').addClass('filtered-in');
+            $('.duty-wrapper').children().addClass('filtered-in');
+            $('.show-hide-button').addClass('showing');
+            $('.show-hide-button a').text('-');
+        }
+    }
+
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+    var formattedPhone = HTMLmobile.replace("%data%" , bio.contacts.mobile);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $('.bio-container').prepend(HTMLheaderName.replace('%data%', bio.name));
     $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
     $('.bio-container').prepend(formattedBioPic);
@@ -592,26 +591,25 @@ function shrinkHeader() {
 
 var currentJob;
 
-matchJobs = function(duty) {
-    if(duty === currentJob) {
-        return true;
-    }
-};
-
 work.display = function(){
+    matchJobs = function(duty) {
+        if(duty === currentJob) {
+            return true;
+        }
+    };
     for (var key in work.jobs) {
       if (work.jobs.hasOwnProperty(key)) {
         currentJob = work.jobs[key];
         $('#workExperience').append(HTMLworkStart);
       }
-// Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
+    // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
       if (Boolean(work.jobs[key].employer) === true) {
         $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].title)));
       } else {
           $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].title));
       }
       $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].location) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
-// Add all related job duties to the work-entry -- instead of a description.
+    // Add all related job duties to the work-entry -- instead of a description.
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
            var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
