@@ -78,7 +78,7 @@ h3, ul {
   justify-content: space-between;
   -webkit-flex-direction: row;
   -webkit-justify-content: space-between;
-  max-width: 575px;
+  max-width: 600px;
 }
 
 .project-heading {

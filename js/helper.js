@@ -132,7 +132,7 @@ function initializeMap() {
     //used a variable called job with an annon fcn (job)
     for (var key in work.jobs) {
       if (work.jobs.hasOwnProperty(key)) {
-      locations.push(work.jobs[key].city);
+      locations.push(work.jobs[key].location);
     };
   };
     return locations;

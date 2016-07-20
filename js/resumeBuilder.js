@@ -21,57 +21,57 @@ var bio = {
         "linkedin" : "https://www.linkedin.com/in/benson-gardner-7009859",
         "location" : "Madison, Wisconsin, USA"
     },
-    "picture" : "images/bg-logo.svg",
-    "message" : "Engaging, informative, beautiful experiences in service of a mission.",
-    "skills" : [lead, web, video, write, create, collab, perform, tech, comms]
+    "welcomeMessage" : "Engaging, informative, beautiful experiences in service of a mission.",
+    "skills" : [lead, web, video, write, create, collab, perform, tech, comms],
+    "biopic" : "images/bg-logo.svg",
 };
 
 var work = {
     "jobs" : {
         "dpi" : {
-            "position" : "Multimedia Publications Editor",
+            "title" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "2007 -",
             "description" : "I edit and manage certain communications from the state superintendent of public instruction. I am the front-end developer in the Office of the State Superintendent. I also coordinate multimedia production at the agency. That includes leading teams of producers in creating high quality video pieces in a variety of styles. I create guidelines for agency staff and consult and train to ensure our most important videos are high quailty. I also led the effort to create a pocliy to guide the organization's social media use, back when that was a really new thing."
         },
         "webdev" : {
-            "position" : "Front-End Web Developer",
+            "title" : "Front-End Web Developer",
             "employer" : "",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "2016 -"
         },
         "indie" : {
-            "position" : "Independent Media Producer",
-            "city" : "Madison, Wisconsin, USA",
+            "title" : "Independent Media Producer",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "1996 -",
             "description" : "I've led teams to create animated explainers, history-focused reality television, and sketch comedy."
         },
         "uwp" : {
-            "position" : "Publicity Manager",
+            "title" : "Publicity Manager",
             "employer" : "University of Wisconsin Press",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "2004 - 2007",
             "description" : "I worked at a fast pace with a group of wonderful interns to get our books some attention when they hit the market."
         },
         "wpr" : {
-            "position" : "News Reporter/Producer",
+            "title" : "News Reporter/Producer",
             "employer" : "Wisconsin Public Radio",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "1997 - 2004",
             "description" : "I got to use my own journalistic judgment, people skills, writing, audio editing, and vocal performance abilities. I won a number of awards for my stories. I served for a few years as Legal Affairs Reporter and filled in as State Capitol Reporter. I spent a year as a talk show producer as well."
         },
         "wpt" : {
-            "position" : "Associate Television Producer / Web Content Producer / Production Assistant",
+            "title" : "Associate Television Producer / Web Content Producer / Production Assistant",
             "employer" : "Wisconsin Public Television",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "2001 - 2004",
             "description" : "Created TV segments in historical documentary style and was part of a content team for portalwisconsin.org."
         },
         "improv" : {
-            "position" : "Comedy Improviser",
+            "title" : "Comedy Improviser",
             "employer" : "ComedySportz-Madison, Monkey Business Institute",
-            "city" : "Madison, Wisconsin, USA",
+            "location" : "Madison, Wisconsin, USA",
             "years" : "1996 - 2002, 2008 - 2012",
             "description" : "Improvisation means giving up control while looking like you aren't."
         }
@@ -86,12 +86,16 @@ var education = {
             "degree" : "B.A.",
             "major" : "Anthropology",
             "dates" : "1991 - 1995",
+            "url" :  "http://www.uchicago.edu",
             "notable" : ["Cum laude. National Merit Scholar."]
         },
         {
             "name" : "Menomonie High School",
             "location" : "Menomonie, Wisconsin, USA",
+            "degree" : "High School Diploma",
+            "majors" : "n/a",
             "dates" : "1987 - 1991",
+            "url" : "http://mhs.sdmaonline.com",
             "notable" : ["Top 3 percent of class. All-State Scholar. National Honors Society."]
         }
     ],
@@ -100,7 +104,7 @@ var education = {
             "title" : "Front-End Developer Nanodegree",
             "school" : "Udacity.com",
             "dates" : "2016",
-            "URL" : "http://udacity.com"
+            "url" : "http://udacity.com"
         }
     ],
     "otherTraining": [
@@ -114,47 +118,52 @@ var education = {
 };
 
 var projects = {
-    "projectEntries" : [
+    "projects" : [
         {
-            "name" : "Example Animated Explainer: Social Entrepeneurship and Kids",
-            "image" : "images/ceoot-560.jpg",
+            "title" : "Example Animated Explainer: Social Entrepeneurship and Kids",
+            "dates" : "2015",
+            "images" : "images/ceoot-560.jpg",
             "link" : "http://youtube.com/watch?v=JZEZHcrl-2Q",
-            "challenge" : "Create a professional, compelling video message for an educational nonprofit",
+            "description" : "Create a professional, compelling video message for an educational nonprofit",
             "role" : "Assemble and lead team, write script in consultation with client, direct video, voice narration",
-            "position" : "Independent Media Producer"
+            "job" : "Independent Media Producer"
         },
         {
-            "name" : "Wisconsin Department of Public Instruction Video Program",
-            "image" : "images/dpiyt-560.jpg",
-            "link" : "http://wilife.org/no-obstacles-for-parkour-athletes",
-            "challenge" : "Create and maintain extensive, effective video production for a state agency and an elected official",
+            "title" : "Wisconsin Department of Public Instruction Video Program",
+            "dates" : "2007 - present",
+            "images" : "images/dpiyt-560.jpg",
+            "link" : "http://www.wisconsinlife.org/story/no-obstacles-parkour-athletes",
+            "description" : "Create and maintain extensive, effective video production for a state agency and an elected official",
             "role" : "Coordinate all production in the agency, direct high-profile videos, shoot and edit video, write and voice narration",
-            "position" : "Multimedia Publications Editor"
+            "job" : "Multimedia Publications Editor"
         },
         {
-            "name" : "Parkour Profile",
-            "image" : "images/parkour-560.jpg",
+            "title" : "Parkour Profile",
+            "dates" : "2015",
+            "images" : "images/parkour-560.jpg",
             "link" : "http://wilife.org/no-obstacles-for-parkour-athletes",
-            "challenge" : "Find an interesting person and bring their story to life for broadcast on Wisconsin Public Television",
+            "description" : "Find an interesting person and bring their story to life for broadcast on Wisconsin Public Television",
             "role" : "Writer-Producer",
-            "position" : "Independent Media Producer"
+            "job" : "Independent Media Producer"
         },
         {
-            "name" : "Online Portfolio",
-            "image" : "images/bg-logo.svg",
+            "title" : "Online Portfolio",
+            "dates" : "2016",
+            "images" : "images/bg-logo.svg",
             "link" : "https://github.com/BensonGardner/portfolio",
-            "challenge" : "Create a responsive, engaging site to display my work",
+            "description" : "Create a responsive, engaging site to display my work",
             "role" : "Developer",
-            "position" : "Front-End Developer"
+            "job" : "Front-End Developer"
         },
         {
-            "name" : "Historical Markers",
-            "image" : "images/markersgroup-560.jpg",
+            "title" : "Historical Markers",
+            "dates" : "2006-07",
+            "images" : "images/markersgroup-560.jpg",
             "link" : "https://www.cityofmadison.com/planning/pdf/markersgroup.pdf",
             "client" : "City of Madison Sesquicentennial Commission",
-            "challenge" : "Research, write, and choose images for 12 engaging signs about periods of Madison history chosen by the city's Sesquicentennial Commission",
+            "description" : "Research, write, and choose images for 12 engaging signs about periods of Madison history chosen by the city's Sesquicentennial Commission",
             "role" : "Writer / Photo Researcher",
-            "position" : "Independent Media Producer"
+            "job" : "Independent Media Producer"
         }
     ]
 };
@@ -445,7 +454,7 @@ var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 var formattedPhone = HTMLmobile.replace("%data%" , bio.contacts.mobile);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 
 /* Create function that allows filtering of duties using the skills */
 function filterDuties(event) {
@@ -490,7 +499,7 @@ function showHide() {
 
 bio.display = function(){
     $('.bio-container').prepend(HTMLheaderName.replace('%data%', bio.name));
-    $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.message));
+    $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
     $('.bio-container').prepend(formattedBioPic);
     $('#footerContacts').append(formattedEmail);
     $('#footerContacts').append(formattedLinkedin);
@@ -597,11 +606,11 @@ work.display = function(){
       }
 // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
       if (Boolean(work.jobs[key].employer) === true) {
-        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].position)));
+        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].title)));
       } else {
-          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].position));
+          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].title));
       }
-      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].city) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
+      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].location) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
 // Add all related job duties to the work-entry -- instead of a description.
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
@@ -615,14 +624,14 @@ work.display = function(){
 };
 
 projects.display = function() {
-    for (projectIndex = 0; projectIndex < projects.projectEntries.length; projectIndex++) {
+    for (projectIndex = 0; projectIndex < projects.projects.length; projectIndex++) {
         $('#projects').append(HTMLprojectStart);
-        var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projectEntries[projectIndex].name);
-        formattedProjectName = formattedProjectName.replace('#' , projects.projectEntries[projectIndex].link);
-        var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projectEntries[projectIndex].image);
-        formattedProjectImage = formattedProjectImage.replace('#' , projects.projectEntries[projectIndex].link);
-        var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projectEntries[projectIndex].challenge);
-        var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projectEntries[projectIndex].role);
+        var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projects[projectIndex].title);
+        formattedProjectName = formattedProjectName.replace('#' , projects.projects[projectIndex].link);
+        var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projects[projectIndex].images);
+        formattedProjectImage = formattedProjectImage.replace('#' , projects.projects[projectIndex].link);
+        var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projects[projectIndex].description);
+        var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projects[projectIndex].role);
         $('.project-entry:last').append(formattedProjectName + formattedProjectRole + formattedProjectChallenge + formattedProjectImage);
     }
 };
@@ -640,8 +649,8 @@ education.display = function (){
       }
       var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
       var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
-       if (education.schools[schoolsIndex].major !== undefined) {
-        formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].major);
+       if (education.schools[schoolsIndex].majors !== undefined) {
+        formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].majors);
       } else {
         formattedSchoolMajor = "";
       }
@@ -653,7 +662,7 @@ education.display = function (){
     for (onlinecourseIndex = 0; onlinecourseIndex < education.onlineCourses.length; onlinecourseIndex++) {
         $('#education').append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%' , education.onlineCourses[onlinecourseIndex].title);
-        formattedOnlineTitle = formattedOnlineTitle.replace('#' , education.onlineCourses[onlinecourseIndex].URL);
+        formattedOnlineTitle = formattedOnlineTitle.replace('#' , education.onlineCourses[onlinecourseIndex].url);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%' , education.onlineCourses[onlinecourseIndex].school);
         var formattedOnlineDates = HTMLonlineDates.replace('%data%' , education.onlineCourses[onlinecourseIndex].dates);
         $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates);
