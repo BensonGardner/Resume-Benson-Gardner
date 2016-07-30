@@ -21,14 +21,15 @@ var bio = {
         "location" : "Madison, Wisconsin, USA"
     },
     "welcomeMessage" : "Engaging, informative, beautiful experiences in service" +
-    "of a mission.",
+        "of a mission.",
     "skills" : [lead, web, video, write, create, collab, perform, tech, comms],
     "biopic" : "images/bg-logo.svg",
 };
 
 var work = {
-    "jobs" : {
-        "dpi" : {
+    "jobs" : [
+        {
+            "jobId" : "dpi",
             "title" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
             "location" : "Madison, Wisconsin, USA",
@@ -44,47 +45,64 @@ var work = {
             "organization's social media use, back when that was a really new" +
             "thing."
         },
-        "webdev" : {
+        {
+            "jobId" : "webdev",
             "title" : "Front-End Web Developer",
             "employer" : "",
             "location" : "Madison, Wisconsin, USA",
-            "dates" : "2016 -"
+            "dates" : "2016 -",
+            "description" : "I create beautiful experiences in service of a goal."
         },
-        "indie" : {
+        {
+            "jobId" : "indie",
             "title" : "Independent Media Producer",
+            "employer" : "",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "1996 -",
-            "description" : "I've led teams to create animated explainers, history-focused reality television, and sketch comedy."
+            "description" : "I've led teams to create animated explainers," +
+                " history-focused reality television, and sketch comedy."
         },
-        "uwp" : {
+        {
+            "jobId" : "uwp",
             "title" : "Publicity Manager",
             "employer" : "University of Wisconsin Press",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "2004 - 2007",
-            "description" : "I worked at a fast pace with a group of wonderful interns to get our books some attention when they hit the market."
+            "description" : "I worked at a fast pace with a group of wonderful" +
+                " interns to get our books some attention when they hit the market."
         },
-        "wpr" : {
+        {
+            "jobId" : "wpr",
             "title" : "News Reporter/Producer",
             "employer" : "Wisconsin Public Radio",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "1997 - 2004",
-            "description" : "I got to use my own journalistic judgment, people skills, writing, audio editing, and vocal performance abilities. I won a number of awards for my stories. I served for a few years as Legal Affairs Reporter and filled in as State Capitol Reporter. I spent a year as a talk show producer as well."
+            "description" : "I got to use my own journalistic judgment, people " +
+                "skills, writing, audio editing, and vocal performance abilities." +
+                " I won a number of awards for my stories. I served for a few " +
+                "years as Legal Affairs Reporter and filled in as State Capitol " +
+                "Reporter. I spent a year as a talk show producer as well."
         },
-        "wpt" : {
-            "title" : "Associate Television Producer / Web Content Producer / Production Assistant",
+        {
+            "jobId" : "wpt",
+            "title" : "Associate Producer / Web Content Producer " +
+                "/ Production Assistant",
             "employer" : "Wisconsin Public Television",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "2001 - 2004",
-            "description" : "Created TV segments in historical documentary style and was part of a content team for portalwisconsin.org."
+            "description" : "Created TV segments in historical documentary " +
+                "style and was part of a content team for portalwisconsin.org."
         },
-        "improv" : {
+        {
+            "jobId" : "improv",
             "title" : "Comedy Improviser",
             "employer" : "ComedySportz-Madison, Monkey Business Institute",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "1996 - 2002, 2008 - 2012",
-            "description" : "Improvisation means giving up control while looking like you aren't."
+            "description" : "Improvisation means giving up control while " +
+                "looking like you aren't."
         }
-    }
+    ]
 };
 
 var education = {
@@ -181,277 +199,277 @@ var duties = [
     {
         "name" : "Recruit, hire, oversee staff",
         "relatedSkills" : [lead],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.uwp]
+        "relatedJobs" : [work.jobs[0], work.jobs[3]]
     },
     {
         "name" : "Lead production teams",
         "relatedSkills" : [lead, video, collab, create],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+        "relatedJobs" : [work.jobs[0], work.jobs[2]]
     },
     {
         "name" : "Manage organization's video program",
         "relatedSkills" : [lead, video],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Manage state superintendent’s electronic newsletter, DPI-ConnectEd",
         "relatedSkills" : [write, collab, web, create],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Write news releases, articles, and other materials",
         "relatedSkills" : [write, collab],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.uwp]
+        "relatedJobs" : [work.jobs[0], work.jobs[3]]
     },
     {
         "name" : "Create video pieces",
         "relatedSkills" : [video, collab, create, write],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.wpt, work.jobs.indie]
+        "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
     },
     {
         "name" : "Record narration and voiceover",
         "relatedSkills" : [video, perform, comms],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.wpt, work.jobs.indie]
+        "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
     },
     {
         "name" : "Produce award-winning radio news segments for statewide broadcast",
         "relatedSkills" : [video, create, perform, write],
-        "relatedJobs" : [work.jobs.wpr]
+        "relatedJobs" : [work.jobs[4]]
     },
     {
         "name" : "Comic acting",
         "relatedSkills" : [perform, create],
-        "relatedJobs" : [work.jobs.improv, work.jobs.indie]
+        "relatedJobs" : [work.jobs[6], work.jobs[2]]
     },
     {
         "name" : "Craft and oversee wording and visual presentation of agency messages for videos",
         "relatedSkills" : [lead, write, comms, video, create],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Draft quotations and talking points",
         "relatedSkills" : [write, comms],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Plan, execute communications campaigns",
         "relatedSkills" : [lead, collab, create, video, web, write, comms],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Assemble, facilitate workgroups and committees",
         "relatedSkills" : [lead, collab, perform],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Serve as lead author for agency policy on social media",
         "relatedSkills" : [lead, comms, web, create],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Advise on social media, video, and emerging communications technologies",
         "relatedSkills" : [lead, comms, create, web, collab],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Communicate via social media",
         "relatedSkills" : [comms],
-        "relatedJobs" : [work.jobs.uwp]
+        "relatedJobs" : [work.jobs[3]]
     },
     {
         "name" : "Manage content for state superintendent’s and other areas of agency website",
         "relatedSkills" : [lead, web, write, collab],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Capture video, audio, still photographs",
         "relatedSkills" : [video, comms],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie, work.jobs.wpr]
+        "relatedJobs" : [work.jobs[0], work.jobs[2], work.jobs[4]]
     },
     {
         "name" : "Serve as writer, photo researcher in creation of historical markers for permanent outdoor installation",
         "relatedSkills" : [write, comms, create, collab],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "Adobe Creative Cloud (Premiere Pro, AfterEffects, Audition, Photoshop, Dreamweaver, Illustrator)",
         "relatedSkills" : [video, tech],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+        "relatedJobs" : [work.jobs[0], work.jobs[2]]
     },
     {
         "name" : "Manage & edit web content",
         "relatedSkills" : [lead, write, web, tech],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
     },
     {
         "name" : "HTML",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt, work.jobs.webdev]
+        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5], work.jobs[1]]
     },
     {
         "name" : "CSS",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.webdev]
+        "relatedJobs" : [work.jobs[0], work.jobs[1]]
     },
     {
         "name" : "Drupal",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Use in-house content management",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.wpr, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
     },
     {
         "name" : "FTP",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.wpr, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[4], work.jobs[5]]
     },
     {
         "name" : "Register & manage web domains",
         "relatedSkills" : [web],
-        "relatedJobs" : [work.jobs.dpi, work.jobs.indie]
+        "relatedJobs" : [work.jobs[0], work.jobs[2]]
     },
     {
         "name" : "Assist in media relations",
         "relatedSkills" : [comms],
-        "relatedJobs" : [work.jobs.dpi]
+        "relatedJobs" : [work.jobs[0]]
     },
     {
         "name" : "Oversee publicity strategy",
         "relatedSkills" : [comms, create, lead],
-        "relatedJobs" : [work.jobs.uwp]
+        "relatedJobs" : [work.jobs[3]]
     },
     {
         "name" : "Work with contacts to secure print, broadcast, and online coverage",
         "relatedSkills" : [comms, collab],
-        "relatedJobs" : [work.jobs.uwp, work.jobs.indie]
+        "relatedJobs" : [work.jobs[3], work.jobs[2]]
     },
     {
         "name" : "Strategize & create publicity materials",
         "relatedSkills" : [write, create, comms],
-        "relatedJobs" : [work.jobs.uwp]
+        "relatedJobs" : [work.jobs[3]]
     },
         {
         "name" : "Research historical and contemporary topics",
         "relatedSkills" : [write],
-        "relatedJobs" : [work.jobs.indie, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[2], work.jobs[5]]
     },
     {
         "name" : "Research contemporary topics",
         "relatedSkills" : [write],
-        "relatedJobs" : [work.jobs.wpr]
+        "relatedJobs" : [work.jobs[4]]
     },
     {
         "name" : "Write informative, engaging, and/or entertaining scripts",
         "relatedSkills" : [write, create, video],
-        "relatedJobs" : [work.jobs.indie, work.jobs.dpi, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
     },
     {
         "name" : "Establish lighthearted, enthusiastic tone in workgroup and on screen",
         "relatedSkills" : [comms, lead, create, perform],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "Develop and execute concepts for comedy and nonfiction television",
         "relatedSkills" : [create, collab, video],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "Arrange and publicize screenings",
         "relatedSkills" : [comms, lead],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "FinalCut Pro",
         "relatedSkills" : [video, tech],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "Avid Media Composer",
         "relatedSkills" : [video, tech],
-        "relatedJobs" : [work.jobs.wpt]
+        "relatedJobs" : [work.jobs[5]]
     },
     {
         "name" : "Vegas Video",
         "relatedSkills" : [video, tech],
-        "relatedJobs" : [work.jobs.indie]
+        "relatedJobs" : [work.jobs[2]]
     },
     {
         "name" : "Arrange and conduct interviews with experts and other external sources",
         "relatedSkills" : [video, collab, write],
-        "relatedJobs" : [work.jobs.indie, work.jobs.dpi, work.jobs.wpt]
+        "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
     },
     {
         "name" : "Arrange and conduct interviews with elected officials, legislators, and other external sources",
         "relatedSkills" : [video, collab, write],
-        "relatedJobs" : [work.jobs.wpr]
+        "relatedJobs" : [work.jobs[4]]
     },
     {
         "name" : "Create and produce new talk radio show as part of team",
         "relatedSkills" : [video, collab, create],
-        "relatedJobs" : [work.jobs.wpr]
+        "relatedJobs" : [work.jobs[4]]
     },
     {
         "name" : "Produce non-fiction television segments for statewide broadcast",
         "relatedSkills" : [video, collab, write],
-        "relatedJobs" : [work.jobs.wpt]
+        "relatedJobs" : [work.jobs[5]]
     },
         {
         "name" : "Instigate laughter: great, debilitating laughter",
         "relatedSkills" : [perform, comms, create],
-        "relatedJobs" : [work.jobs.improv]
+        "relatedJobs" : [work.jobs[6]]
     },
     {
         "name" : "Engage live audiences",
         "relatedSkills" : [comms, lead, create, perform],
-        "relatedJobs" : [work.jobs.improv]
+        "relatedJobs" : [work.jobs[6]]
     },
     {
         "name" : "Improvise effectively",
         "relatedSkills" : [comms, perform, create],
-        "relatedJobs" : [work.jobs.improv]
+        "relatedJobs" : [work.jobs[6]]
     },
     {
         "name" : "Rely on trust, teamwork to solve tough problems",
         "relatedSkills" : [collab, lead],
-        "relatedJobs" : [work.jobs.improv]
+        "relatedJobs" : [work.jobs[6]]
     },
     {
         "name" : "Endure a governor deliberately banging his elbows on the microphone table as he answered a question he apparently didn't want me to ask",
         "relatedSkills" : [],
-        "relatedJobs" : [work.jobs.wpr]
+        "relatedJobs" : [work.jobs[4]]
     },
     {
         "name" : "Experiment with some new platform called Facebook",
         "relatedSkills" : [create, comms],
-        "relatedJobs" : [work.jobs.uwp]
+        "relatedJobs" : [work.jobs[3]]
     },
     {
         "name" : "Develop an unexpected fervor for Finland",
         "relatedSkills" : [],
-        "relatedJobs" : [work.jobs.wpt]
+        "relatedJobs" : [work.jobs[5]]
     },
     {
         "name" : "Create dynamic, engaging websites",
         "relatedSkills" : [web, create],
-        "relatedJobs" : [work.jobs.webdev]
+        "relatedJobs" : [work.jobs[1]]
     },
     {
         "name" : "Javascript",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.webdev]
+        "relatedJobs" : [work.jobs[1]]
     },
     {
         "name" : "Git & GitHub",
         "relatedSkills" : [web, tech],
-        "relatedJobs" : [work.jobs.webdev]
+        "relatedJobs" : [work.jobs[1]]
     },
     {
         "name" : "Hide a few Easter eggs, like this one, in my online resume",
         "relatedSkills" : [web, create],
-        "relatedJobs" : [work.jobs.webdev]
+        "relatedJobs" : [work.jobs[1]]
     }
 ];
 
