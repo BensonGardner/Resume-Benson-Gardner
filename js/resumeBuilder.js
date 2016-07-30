@@ -142,7 +142,7 @@ var projects = {
         {
             "title" : "Example Animated Explainer: Social Entrepeneurship and Kids",
             "dates" : "2015",
-            "images" : "images/ceoot-560.jpg",
+            "images" : ["images/ceoot-560.jpg"],
             "link" : "http://youtube.com/watch?v=JZEZHcrl-2Q",
             "description" : "Create a professional, compelling video message for an educational nonprofit",
             "role" : "Assemble and lead team, write script in consultation with client, direct video, voice narration",
@@ -151,7 +151,7 @@ var projects = {
         {
             "title" : "Wisconsin Department of Public Instruction Video Program",
             "dates" : "2007 - present",
-            "images" : "images/dpiyt-560.jpg",
+            "images" : ["images/dpiyt-560.jpg"],
             "link" : "http://www.wisconsinlife.org/story/no-obstacles-parkour-athletes",
             "description" : "Create and maintain extensive, effective video production for a state agency and an elected official",
             "role" : "Coordinate all production in the agency, direct high-profile videos, shoot and edit video, write and voice narration",
@@ -160,7 +160,7 @@ var projects = {
         {
             "title" : "Parkour Profile",
             "dates" : "2015",
-            "images" : "images/parkour-560.jpg",
+            "images" : ["images/parkour-560.jpg"],
             "link" : "http://wilife.org/no-obstacles-for-parkour-athletes",
             "description" : "Find an interesting person and bring their story to life for broadcast on Wisconsin Public Television",
             "role" : "Writer-Producer",
@@ -169,7 +169,7 @@ var projects = {
         {
             "title" : "Online Portfolio",
             "dates" : "2016",
-            "images" : "images/bg-logo.svg",
+            "images" : ["images/bg-logo.svg"],
             "link" : "https://github.com/BensonGardner/portfolio",
             "description" : "Create a responsive, engaging site to display my work",
             "role" : "Developer",
@@ -178,7 +178,7 @@ var projects = {
         {
             "title" : "Historical Markers",
             "dates" : "2006-07",
-            "images" : "images/markersgroup-560.jpg",
+            "images" : ["images/markersgroup-560.jpg"],
             "link" : "https://www.cityofmadison.com/planning/pdf/markersgroup.pdf",
             "client" : "City of Madison Sesquicentennial Commission",
             "description" : "Research, write, and choose images for 12 engaging signs about periods of Madison history chosen by the city's Sesquicentennial Commission",
@@ -644,11 +644,14 @@ projects.display = function() {
         $('#projects').append(HTMLprojectStart);
         var formattedProjectName = HTMLprojectTitle.replace('%data%' , projects.projects[projectIndex].title);
         formattedProjectName = formattedProjectName.replace('#' , projects.projects[projectIndex].link);
-        var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projects[projectIndex].images);
-        formattedProjectImage = formattedProjectImage.replace('#' , projects.projects[projectIndex].link);
         var formattedProjectChallenge = HTMLprojectChallenge.replace('%data%' , projects.projects[projectIndex].description);
         var formattedProjectRole = HTMLprojectRole.replace('%data%' , projects.projects[projectIndex].role);
-        $('.project-entry:last').append(formattedProjectName + formattedProjectRole + formattedProjectChallenge + formattedProjectImage);
+        $('.project-entry:last').append(formattedProjectName + formattedProjectRole + formattedProjectChallenge);
+        for (projectImageIndex = 0; projectImageIndex < projects.projects[projectIndex].images.length; projectImageIndex++) {
+            var formattedProjectImage = HTMLprojectImage.replace('%data%' , projects.projects[projectIndex].images[projectImageIndex]);
+            formattedProjectImage = formattedProjectImage.replace('#' , projects.projects[projectIndex].link);
+            $('.project-entry:last').append(formattedProjectImage);
+        }
     }
 };
 
