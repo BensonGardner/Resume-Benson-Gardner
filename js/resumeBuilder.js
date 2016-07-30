@@ -621,8 +621,8 @@ work.display = function(){
         currentJob = work.jobs[jobsIndex];
         $('#workExperience').append(HTMLworkStart);
         // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
-        if (Boolean(work.jobs[jobsIndex].employer) === true) {
-        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[jobsIndex].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[jobsIndex].title)));
+        if (work.jobs[jobsIndex].employer) {
+            $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[jobsIndex].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[jobsIndex].title)));
         } else {
             $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[jobsIndex].title));
         }
