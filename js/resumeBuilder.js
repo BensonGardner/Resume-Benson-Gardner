@@ -617,27 +617,25 @@ work.display = function(){
             return true;
         }
     };
-    for (var key in work.jobs) {
-      if (work.jobs.hasOwnProperty(key)) {
-        currentJob = work.jobs[key];
+    for (jobsIndex = 0; jobsIndex < work.jobs.length; jobsIndex++) {
+        currentJob = work.jobs[jobsIndex];
         $('#workExperience').append(HTMLworkStart);
-      }
-    // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
-      if (Boolean(work.jobs[key].employer) === true) {
-        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].title)));
-      } else {
-          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].title));
-      }
-      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].location) + HTMLworkYears.replace('%data%' , work.jobs[key].dates));
-    // Add all related job duties to the work-entry -- instead of a description.
-      for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
-        if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
-           var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
-            formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
-            formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
-            $('.work-entry:last').append(formattedDuty);
+        // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
+        if (Boolean(work.jobs[jobsIndex].employer) === true) {
+        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[jobsIndex].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[jobsIndex].title)));
+        } else {
+            $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[jobsIndex].title));
         }
-      }
+        $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[jobsIndex].location) + HTMLworkYears.replace('%data%' , work.jobs[jobsIndex].dates));
+        // Add all related job duties to the work-entry -- instead of a description.
+        for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
+            if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
+                var formattedDuty = HTMLDuty.replace('%%data%%', duties[dutiesIndex].name);
+                formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
+                formattedDuty = formattedDuty.replace('%data%', duties[dutiesIndex].relatedSkills);
+                $('.work-entry:last').append(formattedDuty);
+            }
+        }
     }
 };
 
