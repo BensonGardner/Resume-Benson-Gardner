@@ -29,7 +29,6 @@ var bio = {
 var work = {
     "jobs" : [
         {
-            "jobId" : "dpi",
             "title" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
             "location" : "Madison, Wisconsin, USA",
@@ -46,7 +45,6 @@ var work = {
             "thing."
         },
         {
-            "jobId" : "webdev",
             "title" : "Front-End Web Developer",
             "employer" : "",
             "location" : "Madison, Wisconsin, USA",
@@ -54,7 +52,6 @@ var work = {
             "description" : "I create beautiful experiences in service of a goal."
         },
         {
-            "jobId" : "indie",
             "title" : "Independent Media Producer",
             "employer" : "",
             "location" : "Madison, Wisconsin, USA",
@@ -63,7 +60,6 @@ var work = {
                 " history-focused reality television, and sketch comedy."
         },
         {
-            "jobId" : "uwp",
             "title" : "Publicity Manager",
             "employer" : "University of Wisconsin Press",
             "location" : "Madison, Wisconsin, USA",
@@ -72,7 +68,6 @@ var work = {
                 " interns to get our books some attention when they hit the market."
         },
         {
-            "jobId" : "wpr",
             "title" : "News Reporter/Producer",
             "employer" : "Wisconsin Public Radio",
             "location" : "Madison, Wisconsin, USA",
@@ -84,7 +79,6 @@ var work = {
                 "Reporter. I spent a year as a talk show producer as well."
         },
         {
-            "jobId" : "wpt",
             "title" : "Associate Producer / Web Content Producer " +
                 "/ Production Assistant",
             "employer" : "Wisconsin Public Television",
@@ -94,7 +88,6 @@ var work = {
                 "style and was part of a content team for portalwisconsin.org."
         },
         {
-            "jobId" : "improv",
             "title" : "Comedy Improviser",
             "employer" : "ComedySportz-Madison, Monkey Business Institute",
             "location" : "Madison, Wisconsin, USA",
