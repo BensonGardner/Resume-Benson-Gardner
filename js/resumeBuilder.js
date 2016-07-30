@@ -20,29 +20,29 @@ var bio = {
         "linkedin" : "https://www.linkedin.com/in/benson-gardner-7009859",
         "location" : "Madison, Wisconsin, USA"
     },
-    "welcomeMessage" : "Engaging, informative, beautiful experiences in service
-    of a mission.",
+    "welcomeMessage" : "Engaging, informative, beautiful experiences in service" +
+    "of a mission.",
     "skills" : [lead, web, video, write, create, collab, perform, tech, comms],
     "biopic" : "images/bg-logo.svg",
 };
 
 var work = {
-    "jobs" : [
+    "jobs" : {
         "dpi" : {
             "title" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
             "location" : "Madison, Wisconsin, USA",
             "dates" : "2007 -",
-            "description" : "I edit and manage certain communications from the
-            state superintendent of public instruction. I am the front-end
-            developer in the Office of the State Superintendent. I also
-            coordinate multimedia production at the agency. That includes
-            leading teams of producers in creating high quality video pieces in
-            a variety of styles. I create guidelines for agency staff and
-            consult and train to ensure our most important videos are high
-            quailty. I also led the effort to create a pocliy to guide the
-            organization's social media use, back when that was a really new
-            thing."
+            "description" : "I edit and manage certain communications from the" +
+            "state superintendent of public instruction. I am the front-end" +
+            "developer in the Office of the State Superintendent. I also" +
+            "coordinate multimedia production at the agency. That includes" +
+            "leading teams of producers in creating high quality video pieces in" +
+            "a variety of styles. I create guidelines for agency staff and" +
+            "consult and train to ensure our most important videos are high" +
+            "quailty. I also led the effort to create a pocliy to guide the" +
+            "organization's social media use, back when that was a really new" +
+            "thing."
         },
         "webdev" : {
             "title" : "Front-End Web Developer",
@@ -613,16 +613,11 @@ work.display = function(){
       }
     // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
       if (Boolean(work.jobs[key].employer) === true) {
-        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' ,
-            work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' ,
-            work.jobs[key].title)));
+        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].title)));
       } else {
-          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' ,
-            work.jobs[key].title));
+          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].title));
       }
-      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' ,
-        work.jobs[key].location) + HTMLworkYears.replace('%data%' ,
-        work.jobs[key].dates));
+      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].location) + HTMLworkYears.replace('%data%' , work.jobs[key].dates));
     // Add all related job duties to the work-entry -- instead of a description.
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
