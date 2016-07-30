@@ -27,12 +27,12 @@ var bio = {
 };
 
 var work = {
-    "jobs" : {
+    "jobs" : [
         "dpi" : {
             "title" : "Multimedia Publications Editor",
             "employer" : "Wisconsin Department of Public Instruction",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "2007 -",
+            "dates" : "2007 -",
             "description" : "I edit and manage certain communications from the
             state superintendent of public instruction. I am the front-end
             developer in the Office of the State Superintendent. I also
@@ -48,40 +48,40 @@ var work = {
             "title" : "Front-End Web Developer",
             "employer" : "",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "2016 -"
+            "dates" : "2016 -"
         },
         "indie" : {
             "title" : "Independent Media Producer",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "1996 -",
+            "dates" : "1996 -",
             "description" : "I've led teams to create animated explainers, history-focused reality television, and sketch comedy."
         },
         "uwp" : {
             "title" : "Publicity Manager",
             "employer" : "University of Wisconsin Press",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "2004 - 2007",
+            "dates" : "2004 - 2007",
             "description" : "I worked at a fast pace with a group of wonderful interns to get our books some attention when they hit the market."
         },
         "wpr" : {
             "title" : "News Reporter/Producer",
             "employer" : "Wisconsin Public Radio",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "1997 - 2004",
+            "dates" : "1997 - 2004",
             "description" : "I got to use my own journalistic judgment, people skills, writing, audio editing, and vocal performance abilities. I won a number of awards for my stories. I served for a few years as Legal Affairs Reporter and filled in as State Capitol Reporter. I spent a year as a talk show producer as well."
         },
         "wpt" : {
             "title" : "Associate Television Producer / Web Content Producer / Production Assistant",
             "employer" : "Wisconsin Public Television",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "2001 - 2004",
+            "dates" : "2001 - 2004",
             "description" : "Created TV segments in historical documentary style and was part of a content team for portalwisconsin.org."
         },
         "improv" : {
             "title" : "Comedy Improviser",
             "employer" : "ComedySportz-Madison, Monkey Business Institute",
             "location" : "Madison, Wisconsin, USA",
-            "years" : "1996 - 2002, 2008 - 2012",
+            "dates" : "1996 - 2002, 2008 - 2012",
             "description" : "Improvisation means giving up control while looking like you aren't."
         }
     }
@@ -613,11 +613,16 @@ work.display = function(){
       }
     // Create two options for first line of each work-entry - because the freelancer entry does not have 'employer' property.
       if (Boolean(work.jobs[key].employer) === true) {
-        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' , work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' , work.jobs[key].title)));
+        $('.work-entry:last').append((HTMLworkEmployer.replace('%data%' ,
+            work.jobs[key].employer)) + (HTMLworkTitle.replace('%data%' ,
+            work.jobs[key].title)));
       } else {
-          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' , work.jobs[key].title));
+          $('.work-entry:last').append(HTMLworkTitle.replace('%data%' ,
+            work.jobs[key].title));
       }
-      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' , work.jobs[key].location) + HTMLworkYears.replace('%data%' , work.jobs[key].years));
+      $('.work-entry:last').append(HTMLworkLocation.replace('%data%' ,
+        work.jobs[key].location) + HTMLworkYears.replace('%data%' ,
+        work.jobs[key].dates));
     // Add all related job duties to the work-entry -- instead of a description.
       for (dutiesIndex = 0; dutiesIndex < duties.length; dutiesIndex++) {
         if (duties[dutiesIndex].relatedJobs.some(matchJobs)) {
