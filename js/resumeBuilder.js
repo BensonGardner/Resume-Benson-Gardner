@@ -9,7 +9,6 @@ var collab = "Collaboration";
 var create = "Creativity, Innovation";
 var perform = "Speaking, Performance";
 var tech = "Specific Platforms";
-
 var bio = {
     "name" : "Benson Gardner",
     "role" : "Communication, Technology, Innovation",
@@ -21,7 +20,8 @@ var bio = {
         "linkedin" : "https://www.linkedin.com/in/benson-gardner-7009859",
         "location" : "Madison, Wisconsin, USA"
     },
-    "welcomeMessage" : "Engaging, informative, beautiful experiences in service of a mission.",
+    "welcomeMessage" : "Engaging, informative, beautiful experiences in service
+    of a mission.",
     "skills" : [lead, web, video, write, create, collab, perform, tech, comms],
     "biopic" : "images/bg-logo.svg",
 };
@@ -33,7 +33,16 @@ var work = {
             "employer" : "Wisconsin Department of Public Instruction",
             "location" : "Madison, Wisconsin, USA",
             "years" : "2007 -",
-            "description" : "I edit and manage certain communications from the state superintendent of public instruction. I am the front-end developer in the Office of the State Superintendent. I also coordinate multimedia production at the agency. That includes leading teams of producers in creating high quality video pieces in a variety of styles. I create guidelines for agency staff and consult and train to ensure our most important videos are high quailty. I also led the effort to create a pocliy to guide the organization's social media use, back when that was a really new thing."
+            "description" : "I edit and manage certain communications from the
+            state superintendent of public instruction. I am the front-end
+            developer in the Office of the State Superintendent. I also
+            coordinate multimedia production at the agency. That includes
+            leading teams of producers in creating high quality video pieces in
+            a variety of styles. I create guidelines for agency staff and
+            consult and train to ensure our most important videos are high
+            quailty. I also led the effort to create a pocliy to guide the
+            organization's social media use, back when that was a really new
+            thing."
         },
         "webdev" : {
             "title" : "Front-End Web Developer",
@@ -84,7 +93,7 @@ var education = {
             "name" : "University of Chicago",
             "location" : "Chicago, Illinois, USA",
             "degree" : "B.A.",
-            "major" : "Anthropology",
+            "majors" : ["Anthropology"],
             "dates" : "1991 - 1995",
             "url" :  "http://www.uchicago.edu",
             "notable" : ["Cum laude. National Merit Scholar."]
@@ -93,7 +102,7 @@ var education = {
             "name" : "Menomonie High School",
             "location" : "Menomonie, Wisconsin, USA",
             "degree" : "High School Diploma",
-            "majors" : "n/a",
+            "majors" : ["n/a"],
             "dates" : "1987 - 1991",
             "url" : "http://mhs.sdmaonline.com",
             "notable" : ["Top 3 percent of class. All-State Scholar. National Honors Society."]
