@@ -98,7 +98,6 @@ h3, ul {
   border-radius: 10px;
   border-width: 2px;
   min-height: 15px;
-  max-height: auto;
   min-width: 50px;
   max-width: 310px;
   font-weight: 300;
@@ -207,7 +206,7 @@ a {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   display: flex;
-  webkit-justify-content:; center;
+  webkit-justify-content: center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -334,8 +333,7 @@ ul {
   height: 100%;
   float: left;
   margin: 0 10px 0 0;
-  clip:rect(0px,25,0,25px);
-
+  clip:rect(0px,25px,0,25px);
 }
 
 .name-message-container {
@@ -352,7 +350,7 @@ ul {
 }
 
 .role {
-  font-color: #555599;
+  color: #555599;
 }
 
 .project-entry img {
