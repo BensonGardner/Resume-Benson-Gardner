@@ -206,7 +206,7 @@ a {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   display: flex;
-  webkit-justify-content: center;
+  -webkit-justify-content: center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
