@@ -333,7 +333,6 @@ ul {
   height: 100%;
   float: left;
   margin: 0 10px 0 0;
-  clip:rect(0px,25px,0,25px);
 }
 
 .name-message-container {

@@ -20,10 +20,10 @@ var bio = {
         "linkedin" : "https://www.linkedin.com/in/benson-gardner-7009859",
         "location" : "Madison, Wisconsin, USA"
     },
-    "welcomeMessage" : "Engaging, informative, beautiful experiences in service" +
+    "welcomeMessage" : "Engaging, informative, beautiful experiences in service " +
         "of a mission.",
     "skills" : [lead, web, video, write, create, collab, perform, tech, comms],
-    "biopic" : "images/bg-logo.svg",
+    "biopic" : "images/bg-logo.svg"
 };
 
 var work = {
@@ -655,7 +655,7 @@ projects.display = function() {
     }
 };
 
-education.display = function (){
+education.display = function () {
     var formattedSchoolDegree;
     var formattedSchoolMajor;
     for (schoolsIndex = 0; schoolsIndex < education.schools.length; schoolsIndex++) {
