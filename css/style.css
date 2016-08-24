@@ -59,6 +59,9 @@ h3, ul {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-align-items: flex-start;
   color: rgb(251, 251, 255);
   font-weight: 200;
 }
@@ -72,7 +75,7 @@ h3, ul {
 }
 
 .project-entry {
-  -webkit-display: flex;
+  display: -webkit-flex;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -88,9 +91,14 @@ h3, ul {
 
 .duty-wrapper {
   display: flex;
+  display: -webkit-flex;
   align-items: center;
+  -webkit-align-items: center;
+  justify-content; center;
+  -webkit-justify-content: center;
   text-align: center;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   background-color: rgba(251, 251, 209, 1.0);
   font-size: 9px;
   margin: 5px;
@@ -163,6 +171,7 @@ h3 {
   color: rgba(251, 251, 255, 1.0);
   line-height: 16px;
   display: flex;
+  display: -webkit-flex;
   width: 100%;
 }
 
@@ -203,12 +212,12 @@ a {
 
 .skills-container {
   padding: 10px 0 10px 20px;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
   display: flex;
-  -webkit-justify-content: center;
+  display: -webkit-flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   justify-content: center;
+  -webkit-justify-content: center;
   align-items: center;
   -webkit-align-items: center;
   min-width: 481px;
@@ -228,6 +237,10 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: center;
+  =webkit-align-items: center;
   max-width: 100%;
 }
 
@@ -317,13 +330,16 @@ ul {
 .flex-item {
   width: auto;
   display: flex;
+  display: -webkit-flex;
 }
 
 .bio-container {
   padding: 0;
   margin: 0;
   display: flex;
+  display: -webkit-flex;
   flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
   -webkit-flex-direction: row;
   flex-direction: row;
   width: 684px;

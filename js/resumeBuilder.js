@@ -112,8 +112,8 @@ var education = {
         {
             "name" : "Menomonie High School",
             "location" : "Menomonie, Wisconsin, USA",
-            "degree" : "High School Diploma",
-            "majors" : ["n/a"],
+            "degree" : "",
+            "majors" : [""],
             "dates" : "1987 - 1991",
             "url" : "http://mhs.sdmaonline.com",
             "notable" : ["Top 3 percent of class. All-State Scholar. National Honors Society."]
@@ -656,26 +656,24 @@ projects.display = function() {
 };
 
 education.display = function () {
-    var formattedSchoolDegree;
-    var formattedSchoolMajor;
     for (schoolsIndex = 0; schoolsIndex < education.schools.length; schoolsIndex++) {
-      $('#education').append(HTMLschoolStart);
-      var formattedSchoolName = HTMLschoolName.replace('%data%' , education.schools[schoolsIndex].name);
-      if (education.schools[schoolsIndex].degree !== undefined) {
-        formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
-      } else {
-        formattedSchoolDegree = "</a></span>";
-      }
-      var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
-      var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
-       if (education.schools[schoolsIndex].majors !== undefined) {
-        formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].majors);
-      } else {
-        formattedSchoolMajor = "";
-      }
-      var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
-      $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation +
-        formattedSchoolMajor + formattedSchoolNotable);
+        $('#education').append(HTMLschoolStart);
+        var formattedSchoolName = HTMLschoolName.replace('%data%' , education.schools[schoolsIndex].name);
+        if (education.schools[schoolsIndex].degree) {
+            var formattedSchoolDegree = HTMLschoolDegree.replace('%data%' , education.schools[schoolsIndex].degree);
+        } else {
+            var formattedSchoolDegree = "</a></span>";
+        }
+        var formattedSchoolDates = HTMLschoolDates.replace('%data%' , education.schools[schoolsIndex].dates);
+        var formattedSchoolLocation = HTMLschoolLocation.replace('%data%' , education.schools[schoolsIndex].location);
+        $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree +
+            formattedSchoolDates + formattedSchoolLocation);
+        if (education.schools[schoolsIndex].majors[0]) {
+            var formattedSchoolMajor = HTMLschoolMajor.replace('%data%' , education.schools[schoolsIndex].majors);
+            $('.education-entry:last').append(formattedSchoolMajor);
+        }
+        var formattedSchoolNotable = HTMLschoolNotable.replace('%data%' , education.schools[schoolsIndex].notable);
+        $('.education-entry:last').append(formattedSchoolNotable);
     }
     $('#education').append(HTMLonlineClasses);
     for (onlinecourseIndex = 0; onlinecourseIndex < education.onlineCourses.length; onlinecourseIndex++) {
