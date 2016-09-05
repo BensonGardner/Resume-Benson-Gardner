@@ -11,7 +11,7 @@ var HTMLblog = '<li class="flex-item"><span class="contact-text">blog</span><spa
 var HTMLlocation = '<li class="flex-item"><br><span class="contact-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic" alt="Benson Gardner logo">';
-var HTMLwelcomeMsg = '<div class="welcome-message">%data%</div></div>';
+var HTMLwelcomeMsg = '<div id="welcome-message">%data%</div></div>';
 
 var HTMLshowHideButton = '<div id="show-hide-container"><span class="show-hide-button"><a href="javascript:;">+</a></span></div>'
 var HTMLskillsStart = '<ul id="skills" class="flex-box"></ul>';

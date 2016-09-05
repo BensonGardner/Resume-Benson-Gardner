@@ -198,16 +198,23 @@ a {
   margin-top: 10px;
 }
 
-.welcome-message {
+#welcome-message {
   display: block;
   overflow: hidden;
   font-style: italic;
   font-weight: 200;
   color: rgba(251, 251, 209, 1.0);
   line-height: 23px;
-  -webkit-transition: visibility 0.2s;
-  transition: visibility 0.2s;
+  -webkit-transition: visibility 0.1s;
+  transition: visibility 0.1s;
+  transition: opacity 0.1s;
+  -webkit-transition: opacity 0.1s;
   font-size: 0.75em;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .skills-container {
@@ -388,5 +395,13 @@ ul {
   padding-bottom: 5%;
 }
 
-/* Media query functionality is replaced with javascript in shrinkHeader function
+/* Most media query functionality is replaced with javascript in shrinkHeader function
 which works when window is resized.*/
+
+@media screen and (min-width: 842px) and (max-width: 907px) {
+
+  #welcome-message {
+    visibility: hidden;
+  }
+
+}

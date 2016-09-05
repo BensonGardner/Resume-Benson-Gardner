@@ -551,7 +551,7 @@ function shrinkHeader() {
         var fontSize = Math.max(1.5,(2.00 - (0.009 * scrollStatus)));
         var nameBottomMargin = Math.max(10 - (0.35 * scrollStatus),0);
         var nameTopMargin = Math.min(10,(0.45 * scrollStatus));
-        var welcomeMessageOpacity = 1.0 - (0.02 * scrollStatus);
+        var welcomeMessageOpacity  = 1.0 - (0.02 * scrollStatus);
         var biopicWidth = Math.max(100, (150 - scrollStatus));
         var skillLineHeight = Math.max(34, (44 - (0.2 * scrollStatus)));
         var backgroundOpacity = Math.min(1.0, (0.83 + ((17 * scrollStatus) / 1000)));
@@ -569,7 +569,7 @@ function shrinkHeader() {
         $('.biopic').css('width' , biopicWidth + 'px');
         $('#name').css('fontSize' , fontSize + 'em');
         $('#name').css('marginBottom' , nameBottomMargin + 'px');
-        $('.welcome-message').css('opacity' , welcomeMessageOpacity);
+        $('#welcome-message').css('opacity' , welcomeMessageOpacity);
         $('.skills-container').css('display' , '-webkit-flex');
         $('.skills-container').css('display' , 'flex');
         $('.skills-container').css('-webkit-flex-direction' , 'row');
