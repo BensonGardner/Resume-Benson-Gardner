@@ -130,13 +130,13 @@ function initializeMap() {
 
     // still working with this now thtat work is an object not array. earlier syntax was the standard forEach loop.
     //used a variable called job with an annon fcn (job)
-    for (var key in work.jobs) {
-      if (work.jobs.hasOwnProperty(key)) {
-      locations.push(work.jobs[key].location);
-    };
-  };
+    work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
+
     return locations;
   }
+
 
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
