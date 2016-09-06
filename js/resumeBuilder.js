@@ -183,284 +183,6 @@ var projects = {
     ]
 };
 
-var duties = [
-    {
-        "name" : "Recruit, hire, oversee staff",
-        "relatedSkills" : [bio.skills[0]],
-        "relatedJobs" : [work.jobs[0], work.jobs[3]]
-    },
-    {
-        "name" : "Lead production teams",
-        "relatedSkills" : [bio.skills[0], bio.skills[2], bio.skills[5], bio.skills[4]],
-        "relatedJobs" : [work.jobs[0], work.jobs[2]]
-    },
-    {
-        "name" : "Manage organization's video program",
-        "relatedSkills" : [bio.skills[0], bio.skills[2]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Manage state superintendent’s electronic newsletter, DPI-ConnectEd",
-        "relatedSkills" : [bio.skills[3], bio.skills[5], bio.skills[1], bio.skills[4]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Write news releases, articles, and other materials",
-        "relatedSkills" : [bio.skills[3], bio.skills[5]],
-        "relatedJobs" : [work.jobs[0], work.jobs[3]]
-    },
-    {
-        "name" : "Create video pieces",
-        "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[4], bio.skills[3]],
-        "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
-    },
-    {
-        "name" : "Record narration and voiceover",
-        "relatedSkills" : [bio.skills[2], bio.skills[6], bio.skills[8]],
-        "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
-    },
-    {
-        "name" : "Produce award-winning radio news segments for statewide broadcast",
-        "relatedSkills" : [bio.skills[2], bio.skills[4], bio.skills[6], bio.skills[3]],
-        "relatedJobs" : [work.jobs[4]]
-    },
-    {
-        "name" : "Comic acting",
-        "relatedSkills" : [bio.skills[6], bio.skills[4]],
-        "relatedJobs" : [work.jobs[6], work.jobs[2]]
-    },
-    {
-        "name" : "Craft and oversee wording and visual presentation of agency messages for videos",
-        "relatedSkills" : [bio.skills[0], bio.skills[3], bio.skills[8], bio.skills[2], bio.skills[4]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Draft quotations and talking points",
-        "relatedSkills" : [bio.skills[3], bio.skills[8]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Plan, execute communications campaigns",
-        "relatedSkills" : [bio.skills[0], bio.skills[5], bio.skills[4], bio.skills[2], bio.skills[1], bio.skills[3], bio.skills[8]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Assemble, facilitate workgroups and committees",
-        "relatedSkills" : [bio.skills[0], bio.skills[5], bio.skills[6]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Serve as lead author for agency policy on social media",
-        "relatedSkills" : [bio.skills[0], bio.skills[8], bio.skills[1], bio.skills[4]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Advise on social media, video, and emerging communications technologies",
-        "relatedSkills" : [bio.skills[0], bio.skills[8], bio.skills[4], bio.skills[1], bio.skills[5]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Communicate via social media",
-        "relatedSkills" : [bio.skills[8]],
-        "relatedJobs" : [work.jobs[3]]
-    },
-    {
-        "name" : "Manage content for state superintendent’s and other areas of agency website",
-        "relatedSkills" : [bio.skills[0], bio.skills[1], bio.skills[3], bio.skills[5]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Capture video, audio, still photographs",
-        "relatedSkills" : [bio.skills[2], bio.skills[8]],
-        "relatedJobs" : [work.jobs[0], work.jobs[2], work.jobs[4]]
-    },
-    {
-        "name" : "Serve as writer, photo researcher in creation of historical markers for permanent outdoor installation",
-        "relatedSkills" : [bio.skills[3], bio.skills[8], bio.skills[4], bio.skills[5]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "Adobe Creative Cloud (Premiere Pro, AfterEffects, Audition, Photoshop, Dreamweaver, Illustrator)",
-        "relatedSkills" : [bio.skills[2], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0], work.jobs[2]]
-    },
-    {
-        "name" : "Manage & edit web content",
-        "relatedSkills" : [bio.skills[0], bio.skills[3], bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
-    },
-    {
-        "name" : "HTML",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5], work.jobs[1]]
-    },
-    {
-        "name" : "CSS",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0], work.jobs[1]]
-    },
-    {
-        "name" : "Drupal",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Use in-house content management",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
-    },
-    {
-        "name" : "FTP",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[4], work.jobs[5]]
-    },
-    {
-        "name" : "Register & manage web domains",
-        "relatedSkills" : [bio.skills[1]],
-        "relatedJobs" : [work.jobs[0], work.jobs[2]]
-    },
-    {
-        "name" : "Assist in media relations",
-        "relatedSkills" : [bio.skills[8]],
-        "relatedJobs" : [work.jobs[0]]
-    },
-    {
-        "name" : "Oversee publicity strategy",
-        "relatedSkills" : [bio.skills[8], bio.skills[4], bio.skills[0]],
-        "relatedJobs" : [work.jobs[3]]
-    },
-    {
-        "name" : "Work with contacts to secure print, broadcast, and online coverage",
-        "relatedSkills" : [bio.skills[8], bio.skills[5]],
-        "relatedJobs" : [work.jobs[3], work.jobs[2]]
-    },
-    {
-        "name" : "Strategize & create publicity materials",
-        "relatedSkills" : [bio.skills[3], bio.skills[4], bio.skills[8]],
-        "relatedJobs" : [work.jobs[3]]
-    },
-        {
-        "name" : "Research historical and contemporary topics",
-        "relatedSkills" : [bio.skills[3]],
-        "relatedJobs" : [work.jobs[2], work.jobs[5]]
-    },
-    {
-        "name" : "Research contemporary topics",
-        "relatedSkills" : [bio.skills[3]],
-        "relatedJobs" : [work.jobs[4]]
-    },
-    {
-        "name" : "Write informative, engaging, and/or entertaining scripts",
-        "relatedSkills" : [bio.skills[3], bio.skills[4], bio.skills[2]],
-        "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
-    },
-    {
-        "name" : "Establish lighthearted, enthusiastic tone in workgroup and on screen",
-        "relatedSkills" : [bio.skills[8], bio.skills[0], bio.skills[4], bio.skills[6]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "Develop and execute concepts for comedy and nonfiction television",
-        "relatedSkills" : [bio.skills[4], bio.skills[5], bio.skills[2]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "Arrange and publicize screenings",
-        "relatedSkills" : [bio.skills[8], bio.skills[0]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "FinalCut Pro",
-        "relatedSkills" : [bio.skills[2], bio.skills[7]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "Avid Media Composer",
-        "relatedSkills" : [bio.skills[2], bio.skills[7]],
-        "relatedJobs" : [work.jobs[5]]
-    },
-    {
-        "name" : "Vegas Video",
-        "relatedSkills" : [bio.skills[2], bio.skills[7]],
-        "relatedJobs" : [work.jobs[2]]
-    },
-    {
-        "name" : "Arrange and conduct interviews with experts and other external sources",
-        "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
-        "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
-    },
-    {
-        "name" : "Arrange and conduct interviews with elected officials, legislators, and other external sources",
-        "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
-        "relatedJobs" : [work.jobs[4]]
-    },
-    {
-        "name" : "Create and produce new talk radio show as part of team",
-        "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[4]],
-        "relatedJobs" : [work.jobs[4]]
-    },
-    {
-        "name" : "Produce non-fiction television segments for statewide broadcast",
-        "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
-        "relatedJobs" : [work.jobs[5]]
-    },
-        {
-        "name" : "Instigate laughter: great, debilitating laughter",
-        "relatedSkills" : [bio.skills[6], bio.skills[8], bio.skills[4]],
-        "relatedJobs" : [work.jobs[6]]
-    },
-    {
-        "name" : "Engage live audiences",
-        "relatedSkills" : [bio.skills[8], bio.skills[0], bio.skills[4], bio.skills[6]],
-        "relatedJobs" : [work.jobs[6]]
-    },
-    {
-        "name" : "Improvise effectively",
-        "relatedSkills" : [bio.skills[8], bio.skills[6], bio.skills[4]],
-        "relatedJobs" : [work.jobs[6]]
-    },
-    {
-        "name" : "Rely on trust, teamwork to solve tough problems",
-        "relatedSkills" : [bio.skills[5], bio.skills[0]],
-        "relatedJobs" : [work.jobs[6]]
-    },
-    {
-        "name" : "Endure a governor deliberately banging his elbows on the microphone table as he answered a question he apparently didn't want me to ask",
-        "relatedSkills" : [],
-        "relatedJobs" : [work.jobs[4]]
-    },
-    {
-        "name" : "Experiment with some new platform called Facebook",
-        "relatedSkills" : [bio.skills[4], bio.skills[8]],
-        "relatedJobs" : [work.jobs[3]]
-    },
-    {
-        "name" : "Develop an unexpected fervor for Finland",
-        "relatedSkills" : [],
-        "relatedJobs" : [work.jobs[5]]
-    },
-    {
-        "name" : "Create dynamic, engaging websites",
-        "relatedSkills" : [bio.skills[1], bio.skills[4]],
-        "relatedJobs" : [work.jobs[1]]
-    },
-    {
-        "name" : "Javascript",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[1]]
-    },
-    {
-        "name" : "Git & GitHub",
-        "relatedSkills" : [bio.skills[1], bio.skills[7]],
-        "relatedJobs" : [work.jobs[1]]
-    },
-    {
-        "name" : "Hide a few Easter eggs, like this one, in my online resume",
-        "relatedSkills" : [bio.skills[1], bio.skills[4]],
-        "relatedJobs" : [work.jobs[1]]
-    }
-];
-
 bio.display = function(){
     /* Create function that allows filtering of duties using the skills */
     function filterDuties(event) {
@@ -600,9 +322,285 @@ function shrinkHeader() {
     }
 }
 
-var currentJob;
-
 work.display = function(){
+        var duties = [
+        {
+            "name" : "Recruit, hire, oversee staff",
+            "relatedSkills" : [bio.skills[0]],
+            "relatedJobs" : [work.jobs[0], work.jobs[3]]
+        },
+        {
+            "name" : "Lead production teams",
+            "relatedSkills" : [bio.skills[0], bio.skills[2], bio.skills[5], bio.skills[4]],
+            "relatedJobs" : [work.jobs[0], work.jobs[2]]
+        },
+        {
+            "name" : "Manage organization's video program",
+            "relatedSkills" : [bio.skills[0], bio.skills[2]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Manage state superintendent’s electronic newsletter, DPI-ConnectEd",
+            "relatedSkills" : [bio.skills[3], bio.skills[5], bio.skills[1], bio.skills[4]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Write news releases, articles, and other materials",
+            "relatedSkills" : [bio.skills[3], bio.skills[5]],
+            "relatedJobs" : [work.jobs[0], work.jobs[3]]
+        },
+        {
+            "name" : "Create video pieces",
+            "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[4], bio.skills[3]],
+            "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
+        },
+        {
+            "name" : "Record narration and voiceover",
+            "relatedSkills" : [bio.skills[2], bio.skills[6], bio.skills[8]],
+            "relatedJobs" : [work.jobs[0], work.jobs[5], work.jobs[2]]
+        },
+        {
+            "name" : "Produce award-winning radio news segments for statewide broadcast",
+            "relatedSkills" : [bio.skills[2], bio.skills[4], bio.skills[6], bio.skills[3]],
+            "relatedJobs" : [work.jobs[4]]
+        },
+        {
+            "name" : "Comic acting",
+            "relatedSkills" : [bio.skills[6], bio.skills[4]],
+            "relatedJobs" : [work.jobs[6], work.jobs[2]]
+        },
+        {
+            "name" : "Craft and oversee wording and visual presentation of agency messages for videos",
+            "relatedSkills" : [bio.skills[0], bio.skills[3], bio.skills[8], bio.skills[2], bio.skills[4]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Draft quotations and talking points",
+            "relatedSkills" : [bio.skills[3], bio.skills[8]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Plan, execute communications campaigns",
+            "relatedSkills" : [bio.skills[0], bio.skills[5], bio.skills[4], bio.skills[2], bio.skills[1], bio.skills[3], bio.skills[8]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Assemble, facilitate workgroups and committees",
+            "relatedSkills" : [bio.skills[0], bio.skills[5], bio.skills[6]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Serve as lead author for agency policy on social media",
+            "relatedSkills" : [bio.skills[0], bio.skills[8], bio.skills[1], bio.skills[4]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Advise on social media, video, and emerging communications technologies",
+            "relatedSkills" : [bio.skills[0], bio.skills[8], bio.skills[4], bio.skills[1], bio.skills[5]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Communicate via social media",
+            "relatedSkills" : [bio.skills[8]],
+            "relatedJobs" : [work.jobs[3]]
+        },
+        {
+            "name" : "Manage content for state superintendent’s and other areas of agency website",
+            "relatedSkills" : [bio.skills[0], bio.skills[1], bio.skills[3], bio.skills[5]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Capture video, audio, still photographs",
+            "relatedSkills" : [bio.skills[2], bio.skills[8]],
+            "relatedJobs" : [work.jobs[0], work.jobs[2], work.jobs[4]]
+        },
+        {
+            "name" : "Serve as writer, photo researcher in creation of historical markers for permanent outdoor installation",
+            "relatedSkills" : [bio.skills[3], bio.skills[8], bio.skills[4], bio.skills[5]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "Adobe Creative Cloud (Premiere Pro, AfterEffects, Audition, Photoshop, Dreamweaver, Illustrator)",
+            "relatedSkills" : [bio.skills[2], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0], work.jobs[2]]
+        },
+        {
+            "name" : "Manage & edit web content",
+            "relatedSkills" : [bio.skills[0], bio.skills[3], bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
+        },
+        {
+            "name" : "HTML",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5], work.jobs[1]]
+        },
+        {
+            "name" : "CSS",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0], work.jobs[1]]
+        },
+        {
+            "name" : "Drupal",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Use in-house content management",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[0], work.jobs[4], work.jobs[5]]
+        },
+        {
+            "name" : "FTP",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[4], work.jobs[5]]
+        },
+        {
+            "name" : "Register & manage web domains",
+            "relatedSkills" : [bio.skills[1]],
+            "relatedJobs" : [work.jobs[0], work.jobs[2]]
+        },
+        {
+            "name" : "Assist in media relations",
+            "relatedSkills" : [bio.skills[8]],
+            "relatedJobs" : [work.jobs[0]]
+        },
+        {
+            "name" : "Oversee publicity strategy",
+            "relatedSkills" : [bio.skills[8], bio.skills[4], bio.skills[0]],
+            "relatedJobs" : [work.jobs[3]]
+        },
+        {
+            "name" : "Work with contacts to secure print, broadcast, and online coverage",
+            "relatedSkills" : [bio.skills[8], bio.skills[5]],
+            "relatedJobs" : [work.jobs[3], work.jobs[2]]
+        },
+        {
+            "name" : "Strategize & create publicity materials",
+            "relatedSkills" : [bio.skills[3], bio.skills[4], bio.skills[8]],
+            "relatedJobs" : [work.jobs[3]]
+        },
+            {
+            "name" : "Research historical and contemporary topics",
+            "relatedSkills" : [bio.skills[3]],
+            "relatedJobs" : [work.jobs[2], work.jobs[5]]
+        },
+        {
+            "name" : "Research contemporary topics",
+            "relatedSkills" : [bio.skills[3]],
+            "relatedJobs" : [work.jobs[4]]
+        },
+        {
+            "name" : "Write informative, engaging, and/or entertaining scripts",
+            "relatedSkills" : [bio.skills[3], bio.skills[4], bio.skills[2]],
+            "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
+        },
+        {
+            "name" : "Establish lighthearted, enthusiastic tone in workgroup and on screen",
+            "relatedSkills" : [bio.skills[8], bio.skills[0], bio.skills[4], bio.skills[6]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "Develop and execute concepts for comedy and nonfiction television",
+            "relatedSkills" : [bio.skills[4], bio.skills[5], bio.skills[2]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "Arrange and publicize screenings",
+            "relatedSkills" : [bio.skills[8], bio.skills[0]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "FinalCut Pro",
+            "relatedSkills" : [bio.skills[2], bio.skills[7]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "Avid Media Composer",
+            "relatedSkills" : [bio.skills[2], bio.skills[7]],
+            "relatedJobs" : [work.jobs[5]]
+        },
+        {
+            "name" : "Vegas Video",
+            "relatedSkills" : [bio.skills[2], bio.skills[7]],
+            "relatedJobs" : [work.jobs[2]]
+        },
+        {
+            "name" : "Arrange and conduct interviews with experts and other external sources",
+            "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
+            "relatedJobs" : [work.jobs[2], work.jobs[0], work.jobs[5]]
+        },
+        {
+            "name" : "Arrange and conduct interviews with elected officials, legislators, and other external sources",
+            "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
+            "relatedJobs" : [work.jobs[4]]
+        },
+        {
+            "name" : "Create and produce new talk radio show as part of team",
+            "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[4]],
+            "relatedJobs" : [work.jobs[4]]
+        },
+        {
+            "name" : "Produce non-fiction television segments for statewide broadcast",
+            "relatedSkills" : [bio.skills[2], bio.skills[5], bio.skills[3]],
+            "relatedJobs" : [work.jobs[5]]
+        },
+            {
+            "name" : "Instigate laughter: great, debilitating laughter",
+            "relatedSkills" : [bio.skills[6], bio.skills[8], bio.skills[4]],
+            "relatedJobs" : [work.jobs[6]]
+        },
+        {
+            "name" : "Engage live audiences",
+            "relatedSkills" : [bio.skills[8], bio.skills[0], bio.skills[4], bio.skills[6]],
+            "relatedJobs" : [work.jobs[6]]
+        },
+        {
+            "name" : "Improvise effectively",
+            "relatedSkills" : [bio.skills[8], bio.skills[6], bio.skills[4]],
+            "relatedJobs" : [work.jobs[6]]
+        },
+        {
+            "name" : "Rely on trust, teamwork to solve tough problems",
+            "relatedSkills" : [bio.skills[5], bio.skills[0]],
+            "relatedJobs" : [work.jobs[6]]
+        },
+        {
+            "name" : "Endure a governor deliberately banging his elbows on the microphone table as he answered a question he apparently didn't want me to ask",
+            "relatedSkills" : [],
+            "relatedJobs" : [work.jobs[4]]
+        },
+        {
+            "name" : "Experiment with some new platform called Facebook",
+            "relatedSkills" : [bio.skills[4], bio.skills[8]],
+            "relatedJobs" : [work.jobs[3]]
+        },
+        {
+            "name" : "Develop an unexpected fervor for Finland",
+            "relatedSkills" : [],
+            "relatedJobs" : [work.jobs[5]]
+        },
+        {
+            "name" : "Create dynamic, engaging websites",
+            "relatedSkills" : [bio.skills[1], bio.skills[4]],
+            "relatedJobs" : [work.jobs[1]]
+        },
+        {
+            "name" : "Javascript",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[1]]
+        },
+        {
+            "name" : "Git & GitHub",
+            "relatedSkills" : [bio.skills[1], bio.skills[7]],
+            "relatedJobs" : [work.jobs[1]]
+        },
+        {
+            "name" : "Hide a few Easter eggs, like this one, in my online resume",
+            "relatedSkills" : [bio.skills[1], bio.skills[4]],
+            "relatedJobs" : [work.jobs[1]]
+        }
+    ];
+    var currentJob;
     matchJobs = function(duty) {
         if(duty === currentJob) {
             return true;
