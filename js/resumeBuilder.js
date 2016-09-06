@@ -515,12 +515,8 @@ bio.display = function(){
     $('.bio-container').prepend(HTMLheaderName.replace('%data%', bio.name));
     $('.name-message-container').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
     $('.bio-container').prepend(formattedBioPic);
-    $('#footerContacts').append(formattedEmail);
-    $('#footerContacts').append(formattedLinkedin);
-    $('#footerContacts').append(formattedGitHub);
-    $('#footerContacts').append(formattedTwitter);
-    $('#footerContacts').append(formattedPhone);
-    $('#footerContacts').append(formattedLocation);
+    $('#footerContacts').append(formattedEmail, formattedLinkedin,
+        formattedGitHub, formattedTwitter, formattedPhone, formattedLocation);
     $('.skills-container').append(HTMLshowHideButton);
     $('.show-hide-button').click(showHide);
     $('.skills-container').append(HTMLskillsStart);
