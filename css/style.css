@@ -94,7 +94,7 @@ h3, ul {
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
-  justify-content; center;
+  justify-content: center;
   -webkit-justify-content: center;
   text-align: center;
   flex-wrap: wrap;
@@ -247,7 +247,7 @@ a {
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
   -webkit-justify-content: center;
-  =webkit-align-items: center;
+  -webkit-align-items: center;
   max-width: 100%;
 }
 
