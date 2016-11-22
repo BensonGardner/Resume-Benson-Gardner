@@ -23,7 +23,7 @@ var bio = {
 
 var work = {
     "jobs": [{
-        "title": "Multimedia Publications Editor",
+        "title": "Communications Officer / Multimedia Publications Editor",
         "employer": "Wisconsin Department of Public Instruction",
         "location": "Madison, Wisconsin, USA",
         "dates": "2007 -",
@@ -370,8 +370,7 @@ work.display = function() {
         "name": "Plan, execute communications campaigns",
         "relatedSkills": [bio.skills[0], bio.skills[5], bio.skills[
                 4], bio.skills[2], bio.skills[1], bio.skills[3],
-            bio.skills[8]
-        ],
+            bio.skills[8]],
         "relatedJobs": [work.jobs[0]]
     }, {
         "name": "Assemble, facilitate workgroups and committees",
@@ -566,6 +565,11 @@ work.display = function() {
         "name": "Hide a few Easter eggs, like this one, in my online resume",
         "relatedSkills": [bio.skills[1], bio.skills[4]],
         "relatedJobs": [work.jobs[1]]
+    },
+    {
+        "name": "Speechwriting",
+        "relatedSkills": [bio.skills[3], bio.skills[8]],
+        "relatedJobs": [work.jobs[0]]
     }];
     var currentJob;
     matchJobs = function(duty) {
