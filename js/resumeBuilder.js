@@ -316,7 +316,12 @@
     }
 
     work.display = function() {
-        var duties = [{
+        var duties = [
+        {
+            "name": "Develop team-level communications plans",
+            "relatedSkills": [bio.skills[0], bio.skills[8]],
+            "relatedJobs": [work.jobs[0]]
+        }, {
             "name": "Recruit, hire, oversee staff",
             "relatedSkills": [bio.skills[0]],
             "relatedJobs": [work.jobs[0], work.jobs[3]]
